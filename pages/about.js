@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function about() {
   return (
     <div className={styles.body}>
-      <h1>Hi, I'm Ian!</h1>
+      <h1>{`Hi, I'm Ian!`}</h1>
 
       <p>I am a super cool software engineer! I make neat stuff with code stuff.</p>
 
