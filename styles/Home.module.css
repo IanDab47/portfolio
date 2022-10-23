@@ -40,7 +40,7 @@
 
 .glassOff {
   position: absolute;
-  animation: glassOff 2s ease-out 350ms forwards;
+  animation: glassOff 2s cubic-bezier(.1,.8,.2,1) 350ms forwards;
 }
 
 .fadeOut {
@@ -115,6 +115,7 @@
   padding-inline: 3.5rem;
   margin-top: 6rem;
   caret-color: transparent;
+  box-shadow: 0 4px 12px rgb(90 90 90 / .5);
   z-index: 2;
 
   transition: all 200ms ease-in;
@@ -122,6 +123,7 @@
 
 .homeHeader:is(:hover, :focus) {
   translate: -80%;
+  box-shadow: 0 4px 12px rgb(90 90 90 / 0);
 }
 
 .homeHeader::after {
@@ -134,12 +136,14 @@
   padding-inline: 3.5rem;
   translate: -120%;
   z-index: -1;
+  box-shadow: 0 4px 12px rgb(90 90 90 / 0);
   transition: all 200ms ease-in;
 }
 
 .homeHeader:is(:hover, :focus)::after {
   content: 'IAN DABINETT';
   translate: 0;
+  box-shadow: 0 4px 12px rgb(90 90 90 / .5);
 }
 
 .heroBg > div > p {
@@ -171,8 +175,8 @@
   .heroBg::after {
     background: linear-gradient(
       -90deg,
-      var(--bg-main) 60%,
-      transparent 60%
+      var(--bg-main) 50%,
+      transparent 63%
     );
   }
 
@@ -212,6 +216,7 @@
 
   .heroBg > div > p {
     font-family: lato, sans-serif;
+    margin-right: 1.2rem;
   }
 }
 
@@ -233,7 +238,7 @@
   }
   100% {
     transform: translate3d(calc(var(--shift) * .1rem), calc(var(--shift) * -.1rem), 5rem);
-    filter: blur(.3rem);
+    filter: blur(.6rem);
     opacity: 0;
   }
 }

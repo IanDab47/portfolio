@@ -10,6 +10,7 @@ import styles from '../styles/Home.module.css'
 
 // Components
 import Loading from '../components/loading'
+import About from '../components/about'
 
 export default function Home() {
   // States
@@ -59,7 +60,7 @@ export default function Home() {
         />
       </div>
 
-      <div className={styles.heroBg}>
+      <div id='home' className={styles.heroBg}>
         <img 
         src={`${isDark ? '/self/hero_bg_dark.png' : '/self/hero_bg_lite.png'}`} 
         className={styles.heroImg} 
@@ -76,8 +77,8 @@ export default function Home() {
         
       </div>
 
-      <div>
-
+      <div id='about'>
+        <About />
       </div>
 
     </div>

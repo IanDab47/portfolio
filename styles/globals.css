@@ -18,6 +18,9 @@
   --fnt-act-1: #c54;
   --fnt-act-2: #cb5;
   --fnt-act-3: #67d;
+  --sb-clr-1: rgb(220 220 220 / .4);
+  --sb-clr-2: rgb(220 220 220 / 1);
+  --sb-bg: rgb(90 90 90 / .4);
 }
 
 html,
@@ -38,6 +41,27 @@ a {
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sb-clr-1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-clr-2);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sb-bg);
+}
+
+::-webkit-scrollbar-corner {
+ background: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
