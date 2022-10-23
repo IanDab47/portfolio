@@ -17,11 +17,19 @@ export default function Home() {
   const [isDark, setIsDark] = useState(false)
   const [loadPage, setLoadPage] = useState(null)
   const [displayHome, setDisplayHome] = useState(null)
+  const [screenWidth, setScreenWidth] = useState(0)
 
   // Hooks
   useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)')) setIsDark(true)
     
+    function handleResize() {
+      setScreenWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return _ => window.removeEventListener('resize', handleResize)
   }, [])
 
   // Handlers
@@ -52,7 +60,11 @@ export default function Home() {
       </div>
 
       <div className={styles.heroBg}>
-        <img src={`${isDark ? '/self/hero_bg_dark.png' : '/self/hero_bg_lite.png'}`} className={styles.heroImg} />
+        <img 
+        src={`${isDark ? '/self/hero_bg_dark.png' : '/self/hero_bg_lite.png'}`} 
+        className={styles.heroImg} 
+        style={{'--curr-w': screenWidth}}
+        />
 
         <div>
           <h1 className={styles.homeHeader}>ID</h1>
@@ -61,6 +73,10 @@ export default function Home() {
         <div>
           <p>This is the home page</p>
         </div>
+        
+      </div>
+
+      <div>
         
       </div>
 

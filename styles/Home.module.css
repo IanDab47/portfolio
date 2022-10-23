@@ -69,7 +69,10 @@
 
 /* HERO */
 .heroBg {
+  display: flex;
+  flex-direction: column;
   width: 100vw; height: 100vh;
+  overflow: hidden;
 }
 
 .heroBg::after {
@@ -86,7 +89,9 @@
 
 .heroImg {
   position: absolute;
-  height: 100vh;
+  aspect-ratio: 16/9;
+  width: 100vw;
+  max-height: 100vh;
   right: 0; top: 0;
   object-fit: cover;
   /* mix-blend-mode: screen; */
@@ -108,6 +113,7 @@
   padding: .3rem;
   padding-inline: 3.5rem;
   margin-top: 6rem;
+  caret-color: transparent;
   z-index: 2;
 
   transition: all 200ms ease-in;
@@ -156,6 +162,10 @@
   #percentage {
     font-family: inherit;
   }
+
+  .heroBg {
+    align-items: end;
+  }
   
   .heroBg::after {
     background: linear-gradient(
@@ -166,26 +176,16 @@
   }
 
   .heroImg {
-    right: initial;
-    margin-left: -15rem;
-  }
-
-  .heroBg > div {
-    margin-left: auto;
+    padding-right: calc(25rem * var(--curr-w) / 1920);
+    margin: 0;
   }
 
   .homeHeader {
-    position: relative;
-    background: var(--fnt-act-1);
+    right: 0;
     font-family: 'Lato', sans-serif;
     font-size: 12.5em; font-weight: 900;
     color: var(--fnt-main);
-    padding: .3rem;
-    padding-inline: 3.5rem;
     margin-top: 6rem;
-    z-index: 2;
-  
-    transition: all 120ms ease-in;
   }
 
   .homeHeader:is(:hover, :focus) {
@@ -195,7 +195,6 @@
   .homeHeader::after {
     content: 'IAN DABINETT';
     position: absolute;
-    top: 0;
     width: max-content;
     background: var(--fnt-act-1);
     padding: .3rem;
@@ -212,7 +211,6 @@
 
   .heroBg > div > p {
     font-family: lato, sans-serif;
-    margin-right: .4em;
   }
 }
 
