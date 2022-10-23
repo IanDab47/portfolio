@@ -109,7 +109,7 @@
   position: relative;
   background: var(--fnt-act-1);
   font-family: 'Voga';
-  font-size: 12.5em; font-weight: normal;
+  font-size: 12vw; font-weight: normal;
   color: var(--bg-main);
   padding: .3rem;
   padding-inline: 3.5rem;
@@ -188,7 +188,7 @@
   .homeHeader {
     right: 0;
     font-family: 'Lato', sans-serif;
-    font-size: 10.5em; font-weight: 900;
+    font-size: 10vw; font-weight: 900;
     color: var(--fnt-main);
     margin-top: 6rem;
   }
