@@ -21,7 +21,8 @@ export default function Home() {
 
   // Hooks
   useEffect(() => {
-    if(window.matchMedia('(prefers-color-scheme: dark)')) setIsDark(true)
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches) setIsDark(true)
+    if(screenWidth === 0) setScreenWidth(window.innerWidth)
     
     function handleResize() {
       setScreenWidth(window.innerWidth)
@@ -30,7 +31,7 @@ export default function Home() {
     window.addEventListener('resize', handleResize)
 
     return _ => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [screenWidth])
 
   // Handlers
   const killLoad = () => {
@@ -40,7 +41,6 @@ export default function Home() {
 
   const addDelay = () => {
     setDelay(delay + 33)
-    console.log(delay)
   }
 
   // Output
@@ -77,7 +77,7 @@ export default function Home() {
       </div>
 
       <div>
-        
+
       </div>
 
     </div>
