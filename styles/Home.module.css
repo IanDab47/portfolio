@@ -10,19 +10,26 @@
   width: 100vw; height: 100vh;
 }
 
+.scrollSnap {
+  scroll-snap-type: y mandatory;
+}
+
 /* Loading */
 .cover {
-  position: relative;
+  position: fixed;
   top: 0;
+  width: 100vw; height: 100vmax;
   background: var(--bg-main);
   z-index: 99;
 }
 
 .loading {
   display: flex;
-  position: absolute;
+  position: fixed;
+  top: 0;
   flex-direction: column;
   justify-content: center; align-items: center;
+  height: 100vh;
   width: 83%;
   max-width: 30rem;
   perspective: 10rem;
@@ -123,7 +130,7 @@
   transition: all 200ms ease-in;
 }
 
-.homeHeader:is(:hover, :focus) {
+.homeHeader:is(:hover, :focus, :active) {
   translate: -80%;
   box-shadow: 0 4px 12px rgb(90 90 90 / 0);
 }
@@ -142,7 +149,7 @@
   transition: all 200ms ease-in;
 }
 
-.homeHeader:is(:hover, :focus)::after {
+.homeHeader:is(:hover, :focus, :active)::after {
   content: 'IAN DABINETT';
   translate: 0;
   box-shadow: 0 4px 12px rgb(90 90 90 / .5);
@@ -151,7 +158,59 @@
 .heroBg > div > p {
   font-family: Times, serif;
   font-weight: 100;
-  font-size: 3em;
+  font-size: 9vw;
+  user-select: none;
+}
+
+.heroBg > div > a {
+  display: block;
+  position: relative;
+  width: max-content;
+  font-family: lato, sans-serif;
+  font-size: clamp(1.8rem, 5vw, 90rem); font-weight: bold; text-transform: uppercase;
+  color: var(--fnt-main);
+  line-height: .3em;
+  user-select: none;
+}
+
+.heroBg > div > a:is(:hover, :focus, :active) {
+  font-size: 8vw;
+  color: var(--fnt-act-2);
+  z-index: 1;
+}
+
+.heroBg > div > a::before {
+  content: attr(value);
+  display: block;
+  position: relative;
+  left: 0; top: 0;
+  font-weight: bold;
+  color: var(--fnt-main);
+  translate: 0 100%;
+  transition: translate 120ms cubic-bezier(.1,.8,.2,1) 0ms;
+}
+
+.heroBg > div > a:is(:hover, :focus, :active)::before {
+  color: var(--fnt-act-1);
+  translate: 0 250%;
+  transition: translate 120ms cubic-bezier(.1,.8,.2,1) 60ms;
+}
+
+.heroBg > div > a::after {
+  content: attr(value);
+  display: block;
+  position: relative;
+  left: 0; top: 0;
+  font-weight: bold;
+  color: var(--fnt-main);
+  translate: 0 -100%;
+  transition: margin-top 120ms cubic-bezier(.1,.8,.2,1) 0ms;
+}
+
+.heroBg > div > a:is(:hover, :focus, :active)::after {
+  color: var(--fnt-act-3);
+  margin-top: 1em;
+  transition: margin-top 120ms cubic-bezier(.1,.8,.2,1) 120ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -220,41 +279,55 @@
     font-family: lato, sans-serif;
     font-size: 7vw; font-weight: 100; font-style: italic;
     margin-right: 7vw;
+    user-select: none;
   }
 
   .heroBg > div > a {
-    /* display: none; */
+    display: inline;
     position: relative;
+    width: initial;
     writing-mode: vertical-lr;
     font-family: lato, sans-serif;
     font-size: 5vw; 
     color: transparent;
+    text-transform: lowercase;
+    line-height: initial;
     vertical-align: top;
     pointer-events: none;
     user-select: none;
+  }
+  
+  .heroBg > div > a:hover {
+    font-size: 5vw;
+    color: transparent;
   }
 
   .heroBg > div > a::before {
     content: attr(href);
     display: inline;
     position: absolute;
-    top: 0;
+    left: initial; top: 0;
     font-weight: 100;
     color: var(--fnt-main);
+    translate: initial;
     pointer-events: initial;
+    opacity: 1;
     transition: all 300ms cubic-bezier(.1,.8,.2,1);
   }
   
-  .heroBg > div > a:hover::before {
+  .heroBg > div > a:is(:hover, :focus)::before {
+    color: currentColor;
     opacity: 0;
     letter-spacing: -1rem;
+    translate: initial;
+    transition: all 300ms cubic-bezier(.1,.8,.2,1);
   }
 
   .heroBg > div > a::after {
     content: attr(href);
     display: inline;
     position: absolute;
-    top: 0;
+    left: initial; top: 0;
     text-orientation: upright;
     font-family: 'EXO 2';
     font-size: 3.5vw; font-weight: 300; text-transform: uppercase;
@@ -264,19 +337,36 @@
     letter-spacing: -2.5rem;
     /* letter-spacing: 0.5rem; */
     opacity: 0;
-    transition: all 300ms cubic-bezier(.1,.8,.2,1) 60ms;
+    translate: 0;
+    transition: all 300ms cubic-bezier(.1,.8,.2,1);
   }
   
-  .heroBg > div > a:hover::after {
+  .heroBg > div > a:is(:hover, :focus)::after {
     opacity: 1;
     letter-spacing: -1.0rem;
+    margin-top: 0;
+    color: var(--fnt-main);
     /* letter-spacing: 1.5rem; */
+    transition: all 300ms cubic-bezier(.1,.8,.2,1);
   }
 }
 
 /* PHONES */
 @media (max-width: 600px) {
+  .homeHeader {
+    pointer-events: none;
+    color: transparent;
+    box-shadow: 0 4px 12px rgb(90 90 90 / 0);
+    margin-top: 3rem;
+  }
   
+  .homeHeader::after {
+    left: 0;
+    color: var(--bg-main);
+    padding-inline: 2rem;
+    translate: 0%;
+    box-shadow: 0 4px 12px rgb(90 90 90 / .5);
+  }
 }
 
 @keyframes slideUp {

@@ -1,4 +1,4 @@
 .body {
-  background: hotpink;
+  background: var(--bg-main);
   min-height: 100vh;
 }
