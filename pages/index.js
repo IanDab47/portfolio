@@ -77,7 +77,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ModeSwitch />
+      <ModeSwitch 
+        isDark={isDark}
+        setIsDark={setIsDark}
+      />
 
       <div className={`${styles.center} ${styles.cover} ${loadPage}`} style={{position: 'absolute'}}>
         <Loading
@@ -88,7 +91,7 @@ export default function Home() {
 
       <div id='home' className={styles.heroBg}>
         <img 
-        src={`${isDark ? '/self/hero_bg_dark.png' : '/self/hero_bg_lite.png'}`} 
+        src='/self/hero_bg_lite.png'
         className={styles.heroImg} 
         style={{'--curr-w': screenWidth}}
         />
@@ -103,7 +106,7 @@ export default function Home() {
         </div>
         
       </div>
-
+      
       <div id='about'>
         <About />
       </div>
