@@ -93,8 +93,7 @@
   overflow-x: clip;
   overflow-y: visible;
   width: 100vw;
-  min-height: 50vh;
-  max-height: 100vh;
+  min-height: 100vh;
   scroll-snap-type: block;
   z-index: 10;
   margin-bottom: 8rem;
@@ -182,7 +181,7 @@
   position: relative;
   width: max-content;
   font-family: lato, sans-serif;
-  font-size: clamp(3.5rem, 5vw, 90rem); font-weight: bold; text-transform: uppercase;
+  font-size: clamp(3.5rem, 6vw, 90rem); font-weight: bold; text-transform: uppercase;
   color: var(--fnt-main);
   line-height: .3em;
   user-select: none;
@@ -190,7 +189,7 @@
 }
 
 .heroBg > div > a:is(:hover, :focus, :active) {
-  font-size: clamp(3.5rem, 8vw, 90rem);
+  font-size: clamp(4.0rem, 9vw, 90rem);
   color: var(--fnt-act-2);
   z-index: 1;
 }
@@ -208,7 +207,7 @@
 
 .heroBg > div > a:is(:hover, :focus, :active)::before {
   color: var(--fnt-act-1);
-  transform: translateY(250%);
+  transform: translateY(275%);
   transition: transform 80ms cubic-bezier(.1,.8,.2,1) 40ms;
 }
 
@@ -226,6 +225,7 @@
 .heroBg > div > a:is(:hover, :focus, :active)::after {
   color: var(--fnt-act-3);
   margin-top: 1em;
+  transform: translateY(-80%);
   transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 80ms;
 }
 
