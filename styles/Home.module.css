@@ -373,7 +373,7 @@
     pointer-events: none;
     color: transparent;
     box-shadow: 0 4px 12px rgb(90 90 90 / 0);
-    translate: 0 -150%;
+    transform: translateY(-150%);
     padding-inline: 0;
     margin: 0;
   }
@@ -385,7 +385,7 @@
     color: var(--bg-main);
     text-align: center;
     padding-inline: 2rem;
-    translate: 0%;
+    transform: translateY(0%);
     padding-inline: 0;
     margin: 0;
     box-shadow: 0 4px 12px rgb(90 90 90 / .5);
