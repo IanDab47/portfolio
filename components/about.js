@@ -6,7 +6,7 @@ export default function about() {
     <div className={styles.body}>
       <h1>{`Hi, I'm Ian!`}</h1>
 
-      <p>I am a super cool software engineer! I make neat stuff with code stuff.</p>
+      <p>After recently graduating from the General Assembly school for software engineering, I am ready to exceed in this new chapter of my life. I hope that it will be with one of you reading this right now!</p>
 
       {/* load an image locally */}
       <Image 

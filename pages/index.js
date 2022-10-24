@@ -23,8 +23,8 @@ export default function Home() {
 
   // Hooks
   useEffect(() => {
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches) setIsDark(true)
     if(screenWidth === 0) setScreenWidth(window.innerWidth)
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches && screenWidth > 600) setIsDark(true)
     
     function handleResize() {
       setScreenWidth(window.innerWidth)
