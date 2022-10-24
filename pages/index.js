@@ -1,6 +1,7 @@
 // Next
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // React
 import { useState, useEffect } from 'react'
@@ -71,8 +72,12 @@ export default function Home() {
           <h1 className={styles.homeHeader}>ID</h1>
         </div>
 
+
         <div>
-          <p>This is the home page</p>
+          <p>PORTFOLIO</p>
+          <Link href='#about' id='about'>about</Link>
+          <Link href='#skills' id='skills'>skills</Link>
+          <Link href='#projects' id='projects'>projects</Link>
         </div>
         
       </div>

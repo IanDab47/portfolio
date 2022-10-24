@@ -44,6 +44,7 @@
 }
 
 .fadeOut {
+  pointer-events: none;
   animation: fadeOut 2s ease-out 350ms forwards;
 }
 
@@ -72,8 +73,9 @@
 .heroBg {
   display: flex;
   flex-direction: column;
-  width: 100vw; height: 100vh;
+  width: 100vw; height: 120vh;
   overflow: hidden;
+  scroll-snap-type: block;
 }
 
 .heroBg::after {
@@ -216,7 +218,59 @@
 
   .heroBg > div > p {
     font-family: lato, sans-serif;
-    margin-right: 1.2rem;
+    font-size: 7vw; font-weight: 100; font-style: italic;
+    margin-right: 7vw;
+  }
+
+  .heroBg > div > a {
+    /* display: none; */
+    position: relative;
+    writing-mode: vertical-lr;
+    font-family: lato, sans-serif;
+    font-size: 5vw; 
+    color: transparent;
+    vertical-align: top;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .heroBg > div > a::before {
+    content: attr(href);
+    display: inline;
+    position: absolute;
+    top: 0;
+    font-weight: 100;
+    color: var(--fnt-main);
+    pointer-events: initial;
+    transition: all 300ms cubic-bezier(.1,.8,.2,1);
+  }
+  
+  .heroBg > div > a:hover::before {
+    opacity: 0;
+    letter-spacing: -1rem;
+  }
+
+  .heroBg > div > a::after {
+    content: attr(href);
+    display: inline;
+    position: absolute;
+    top: 0;
+    text-orientation: upright;
+    font-family: 'EXO 2';
+    font-size: 3.5vw; font-weight: 300; text-transform: uppercase;
+    /* font-weight: 700; text-transform: uppercase; */
+    color: var(--fnt-main);
+    pointer-events: initial;
+    letter-spacing: -2.5rem;
+    /* letter-spacing: 0.5rem; */
+    opacity: 0;
+    transition: all 300ms cubic-bezier(.1,.8,.2,1) 60ms;
+  }
+  
+  .heroBg > div > a:hover::after {
+    opacity: 1;
+    letter-spacing: -1.0rem;
+    /* letter-spacing: 1.5rem; */
   }
 }
 
