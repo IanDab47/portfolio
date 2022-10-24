@@ -90,19 +90,14 @@
   aspect-ratio: 16/9;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: visible;
   width: 100vw;
   min-height: 50vh;
   max-height: 100vh;
   scroll-snap-type: block;
   z-index: 10;
-}
-
-.heroBg *,
-.heroBg *::after ,
-.heroBg *::before {
-  overflow-y: visible;
+  margin-bottom: 8rem;
 }
 
 .heroBg::after {
@@ -125,7 +120,6 @@
   max-height: 100vh;
   right: 0; top: 0;
   object-fit: cover;
-  /* mix-blend-mode: screen; */
   margin-right: -2rem;
 }
 
@@ -257,6 +251,10 @@
     color: var(--fnt-main)
   }
 
+  .homeHeader:is(:hover, :focus, :active) {
+    transform: translateX(-85%);
+    box-shadow: 0 4px 12px rgb(90 90 90 / 0);
+  }
 
   .heroBg > div > p {
     color: var(--bg-main)
