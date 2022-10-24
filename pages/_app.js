@@ -3,13 +3,14 @@ import NavBar from '../components/navBar'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div>
       {/* header */}
       <NavBar />
       {/* aside */}
-      <Component {...pageProps} />
+      <Component {...pageProps}
+      />
       {/* footer */}
-    </>
+    </div>
   )
 }
 

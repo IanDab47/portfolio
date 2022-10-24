@@ -1,3 +1,12 @@
+.dark {
+  --bg-main: #010101;
+  --fnt-main: #eee;
+  --fnt-act-1: #bbe;
+  --fnt-act-2: #beb;
+  --fnt-act-3: #dbb;
+  color-scheme: dark;
+}
+
 .hidden {
   display: none !important;
 }
@@ -78,18 +87,29 @@
 
 /* HERO */
 .heroBg {
+  aspect-ratio: 16/9;
   display: flex;
   flex-direction: column;
-  width: 100vw; height: 120vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 100vw;
+  min-height: 50vh;
+  max-height: 100vh;
   scroll-snap-type: block;
+  z-index: 10;
+}
+
+.heroBg *,
+.heroBg *::after ,
+.heroBg *::before {
+  overflow-y: visible;
 }
 
 .heroBg::after {
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 100vw; min-height: 100vh;
+  width: 100vw; height: min-content;
   background: linear-gradient(
     90deg,
     var(--bg-main) 50%,
@@ -142,6 +162,7 @@
   top: 0;
   width: max-content;
   background: var(--fnt-act-1);
+  white-space: nowrap;
   padding: .3rem;
   padding-inline: 3.5rem;
   transform: translateX(-120%);
@@ -151,7 +172,6 @@
 }
 
 .homeHeader:is(:hover, :focus, :active)::after {
-  content: 'IAN DABINETT';
   transform: translateX(0);
   box-shadow: 0 4px 12px rgb(90 90 90 / .5);
 }
@@ -172,6 +192,7 @@
   color: var(--fnt-main);
   line-height: .3em;
   user-select: none;
+  z-index: 90;
 }
 
 .heroBg > div > a:is(:hover, :focus, :active) {
@@ -188,13 +209,13 @@
   font-weight: bold;
   color: var(--fnt-main);
   transform: translateY(100%);
-  transition: transform 120ms cubic-bezier(.1,.8,.2,1) 0ms;
+  transition: transform 80ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
 .heroBg > div > a:is(:hover, :focus, :active)::before {
   color: var(--fnt-act-1);
   transform: translateY(250%);
-  transition: transform 120ms cubic-bezier(.1,.8,.2,1) 60ms;
+  transition: transform 80ms cubic-bezier(.1,.8,.2,1) 40ms;
 }
 
 .heroBg > div > a::after {
@@ -205,13 +226,13 @@
   font-weight: bold;
   color: var(--fnt-main);
   transform: translateY(-100%);
-  transition: margin-top 120ms cubic-bezier(.1,.8,.2,1) 0ms;
+  transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
 .heroBg > div > a:is(:hover, :focus, :active)::after {
   color: var(--fnt-act-3);
   margin-top: 1em;
-  transition: margin-top 120ms cubic-bezier(.1,.8,.2,1) 120ms;
+  transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 80ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -230,129 +251,27 @@
     font-family: inherit;
   }
 
-  .heroBg {
-    align-items: end;
-  }
-  
-  .heroBg::after {
-    background: linear-gradient(
-      -90deg,
-      var(--bg-main) 50%,
-      transparent 63%
-    );
-  }
-
-  .heroImg {
-    padding-right: calc(25rem * var(--curr-w) / 1920);
-    margin: 0;
-  }
-
   .homeHeader {
-    right: 0;
     font-family: 'Lato', sans-serif;
-    font-size: 10vw; font-weight: 900;
-    color: var(--fnt-main);
-    margin-top: 6rem;
+    font-weight: 900;
+    color: var(--fnt-main)
   }
 
-  .homeHeader:is(:hover, :focus, :active) {
-    translate: 80%;
-  }
-
-  .homeHeader::after {
-    content: 'IAN DABINETT';
-    position: absolute;
-    width: max-content;
-    background: var(--fnt-act-1);
-    padding: .3rem;
-    padding-inline: 3.5rem;
-    translate: 0%;
-    z-index: -1;
-    transition: all 200ms ease-in;
-  }
-  
-  .homeHeader:is(:hover, :focus, :active)::after {
-    content: 'IAN DABINETT';
-    translate: -115%;
-  }
 
   .heroBg > div > p {
-    font-family: lato, sans-serif;
-    font-size: 7vw; font-weight: 100; font-style: italic;
-    border-bottom: 1px solid var(--fnt-main);
-    margin-right: 7vw;
-    margin-bottom: 1.5rem;
-    user-select: none;
+    color: var(--bg-main)
   }
 
   .heroBg > div > a {
-    display: inline;
-    position: relative;
-    width: initial;
-    writing-mode: vertical-lr;
-    font-family: lato, sans-serif;
-    font-size: 5vw; 
-    color: transparent;
-    text-transform: lowercase;
-    line-height: initial;
-    vertical-align: top;
-    pointer-events: none;
-    user-select: none;
-  }
-  
-  .heroBg > div > a:hover {
-    font-size: 5vw;
-    color: transparent;
-  }
-
-  .heroBg > div > a::before {
-    content: attr(href);
-    display: inline;
-    position: absolute;
-    left: initial; top: 0;
-    font-weight: 100;
     color: var(--fnt-main);
-    translate: initial;
-    pointer-events: initial;
-    opacity: 1;
-    transition: all 300ms cubic-bezier(.1,.8,.2,1);
-  }
-  
-  .heroBg > div > a:is(:hover, :focus, :active)::before {
-    color: currentColor;
-    opacity: 0;
-    letter-spacing: -1rem;
-    translate: initial;
-    transition: all 300ms cubic-bezier(.1,.8,.2,1);
   }
 
+  .heroBg > div > a,
+  .heroBg > div > a::before,
   .heroBg > div > a::after {
-    content: attr(href);
-    display: inline;
-    position: absolute;
-    left: initial; top: 0;
-    text-orientation: upright;
-    font-family: 'EXO 2';
-    font-size: 3.5vw; font-weight: 300; text-transform: uppercase;
-    /* font-weight: 700; text-transform: uppercase; */
     color: var(--fnt-main);
-    pointer-events: initial;
-    letter-spacing: -2.5rem;
-    /* letter-spacing: 0.5rem; */
-    opacity: 0;
-    translate: 0;
-    transition: all 300ms cubic-bezier(.1,.8,.2,1);
   }
-  
-  .heroBg > div > a:is(:hover, :focus, :active)::after {
-    opacity: 1;
-    letter-spacing: -1.0rem;
-    margin-top: 0;
-    color: var(--fnt-main);
-    /* letter-spacing: 1.5rem; */
-    transition: all 300ms cubic-bezier(.1,.8,.2,1);
-  }
-}
+} 
 
 /* PHONES */
 @media (max-width: 600px) {
@@ -432,8 +351,4 @@
     z-index: -99;
     opacity: 0;
   }
-} 
-
-@keyframes nameHeader {
-  
 }

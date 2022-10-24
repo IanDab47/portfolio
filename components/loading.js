@@ -9,7 +9,6 @@ export default function Loading({addDelay, killLoad}) {
   const [firstLoad, setFirstLoad] = useState(true)
   const [hidden, setHidden] = useState('')
   const [width, setWidth] = useState(.0001)
-  const [delay, setDelay] = useState(0)
 
   // Hooks
   useEffect(() => {
