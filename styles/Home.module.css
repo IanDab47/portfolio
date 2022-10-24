@@ -132,7 +132,7 @@
 }
 
 .homeHeader:is(:hover, :focus, :active) {
-  translate: -80%;
+  transform: translateX(-80%);
   box-shadow: 0 4px 12px rgb(90 90 90 / 0);
 }
 
@@ -144,7 +144,7 @@
   background: var(--fnt-act-1);
   padding: .3rem;
   padding-inline: 3.5rem;
-  translate: -120%;
+  transform: translateX(-120%);
   z-index: -1;
   box-shadow: 0 4px 12px rgb(90 90 90 / 0);
   transition: all 200ms ease-in;
@@ -152,7 +152,7 @@
 
 .homeHeader:is(:hover, :focus, :active)::after {
   content: 'IAN DABINETT';
-  translate: 0;
+  transform: translateX(0);
   box-shadow: 0 4px 12px rgb(90 90 90 / .5);
 }
 
@@ -187,13 +187,13 @@
   left: 0; top: 0;
   font-weight: bold;
   color: var(--fnt-main);
-  translate: 0 100%;
+  transform: translateY(100%);
   transition: translate 120ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
 .heroBg > div > a:is(:hover, :focus, :active)::before {
   color: var(--fnt-act-1);
-  translate: 0 250%;
+  transform: translateY(250%);
   transition: translate 120ms cubic-bezier(.1,.8,.2,1) 60ms;
 }
 
@@ -204,7 +204,7 @@
   left: 0; top: 0;
   font-weight: bold;
   color: var(--fnt-main);
-  translate: 0 -100%;
+  transform: translateY(-100%);
   transition: margin-top 120ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
