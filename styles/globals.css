@@ -70,7 +70,7 @@ a {
  background: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg-main: #010101;
     --fnt-main: #eee;
@@ -85,7 +85,7 @@ a {
     color: #eee;
     background: var(--bg-main);
   }
-}
+} */
 
 @media (min-width: 2560px) {
   :root {

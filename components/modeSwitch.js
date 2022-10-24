@@ -5,7 +5,7 @@ export default function ModeSwitch({ isDark, setIsDark }) {
   const darkLamp = '/dark-lamp.svg'
 
   return (
-    <div style={{ position: 'sticky', top: 0, margin: '1.5rem 3vw 0 auto',  width: '4vw', zIndex: 99 }}>
+    <div style={{ position: 'absolute', top: 0, right: 0, margin: '1.5rem 3vw 0 auto',  width: '4vw', zIndex: 99 }}>
       <img 
         src={isDark ? darkLamp : lightLamp}
         onClick={() => setIsDark(!isDark)}

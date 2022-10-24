@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 // Styles
 import styles from '../styles/Home.module.css'
 
-export default function Loading({addDelay, killLoad}) {
+export default function Loading({addDelay, killLoad, isDark}) {
   // States
   const [firstLoad, setFirstLoad] = useState(true)
   const [hidden, setHidden] = useState('')
@@ -43,7 +43,7 @@ export default function Loading({addDelay, killLoad}) {
 
   // Output
   return (
-    <div className={`${styles.loading} ${hidden} ${closeLoading()}`}>
+    <div className={`${styles.loading} ${hidden} ${closeLoading()} ${isDark ? styles.dark : null}`}>
       {/* <h1>JavaScript Progress Bar</h1> */}
 
       <div 

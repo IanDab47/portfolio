@@ -25,7 +25,7 @@ export default function Home() {
   // Hooks
   useEffect(() => {
     if(screenWidth === 0) setScreenWidth(window.innerWidth)
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches && screenWidth > 600) setIsDark(false)
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches && screenWidth > 600) setIsDark(true)
     
     function handleResize() {
       setScreenWidth(window.innerWidth)
@@ -86,6 +86,7 @@ export default function Home() {
         <Loading
           killLoad={killLoad}
           addDelay={addDelay}
+          isDark={isDark}
         />
       </div>
 
@@ -100,9 +101,11 @@ export default function Home() {
           <h1 className={styles.homeHeader}>ID</h1>
         </div>
 
-
         <div style={{ marginLeft: '8vw' }}>
-          {isDark ? darkLinks() : lightLinks()}
+          <p>______</p>
+          <a href='#about' value='about'>about</a>
+          <a href='#skills' value='skills'>skills</a>
+          <a href='#projects' value='projects'>projects</a>
         </div>
         
       </div>
