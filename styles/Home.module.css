@@ -188,13 +188,13 @@
   font-weight: bold;
   color: var(--fnt-main);
   transform: translateY(100%);
-  transition: translate 120ms cubic-bezier(.1,.8,.2,1) 0ms;
+  transition: transform 120ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
 .heroBg > div > a:is(:hover, :focus, :active)::before {
   color: var(--fnt-act-1);
   transform: translateY(250%);
-  transition: translate 120ms cubic-bezier(.1,.8,.2,1) 60ms;
+  transition: transform 120ms cubic-bezier(.1,.8,.2,1) 60ms;
 }
 
 .heroBg > div > a::after {
