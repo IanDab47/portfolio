@@ -101,6 +101,7 @@
   position: absolute;
   aspect-ratio: 16/9;
   width: 100vw;
+  min-height: 50vh;
   max-height: 100vh;
   right: 0; top: 0;
   object-fit: cover;
@@ -158,7 +159,7 @@
 .heroBg > div > p {
   font-family: Times, serif;
   font-weight: 100;
-  font-size: 9vw;
+  font-size: clamp(5.5em, 9vw, 90em);
   user-select: none;
 }
 
@@ -167,7 +168,7 @@
   position: relative;
   width: max-content;
   font-family: lato, sans-serif;
-  font-size: clamp(1.8rem, 5vw, 90rem); font-weight: bold; text-transform: uppercase;
+  font-size: clamp(3.5rem, 5vw, 90rem); font-weight: bold; text-transform: uppercase;
   color: var(--fnt-main);
   line-height: .3em;
   user-select: none;
@@ -353,18 +354,38 @@
 
 /* PHONES */
 @media (max-width: 600px) {
+  .heroBg::after {
+    display: none;
+  }
+
+  .heroImg {
+    display: block;
+    position: relative;
+    width: initial;
+    height: 50vh;
+    margin-left: auto;
+  }
+
   .homeHeader {
+    position: absolute;
     pointer-events: none;
     color: transparent;
     box-shadow: 0 4px 12px rgb(90 90 90 / 0);
-    margin-top: 3rem;
+    translate: 0 -150%;
+    padding-inline: 0;
+    margin: 0;
   }
   
   .homeHeader::after {
     left: 0;
+    width: 100vw;
+    font-size: 22vw;
     color: var(--bg-main);
+    text-align: center;
     padding-inline: 2rem;
     translate: 0%;
+    padding-inline: 0;
+    margin: 0;
     box-shadow: 0 4px 12px rgb(90 90 90 / .5);
   }
 }
