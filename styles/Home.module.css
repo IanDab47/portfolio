@@ -96,7 +96,8 @@
   overflow-x: clip;
   overflow-y: visible;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 50vh;
+  max-height: 100vh;
   scroll-snap-type: block;
   z-index: 10;
   margin-bottom: 8rem;
@@ -266,6 +267,10 @@
 
 /* PHONES */
 @media (max-width: 600px) {
+  .heroBg {
+    min-height: 100vh;
+  }
+
   .heroBg::after {
     display: none;
   }
@@ -278,7 +283,8 @@
     margin-left: auto;
   }
 
-  .homeHeader {
+  .homeHeader,
+  .dark .homeHeader {
     position: absolute;
     pointer-events: none;
     color: transparent;
@@ -287,8 +293,13 @@
     padding-inline: 0;
     margin: 0;
   }
+
+  .dark .homeHeader {
+    transform: translateY(-100%);
+  }
   
-  .homeHeader::after {
+  .homeHeader::after,
+  .dark .homeHeader::after {
     left: 0;
     width: 100vw;
     font-size: 22vw;
@@ -299,6 +310,14 @@
     padding-inline: 0;
     margin: 0;
     box-shadow: 0 4px 12px rgb(90 90 90 / .5);
+  }
+
+  .dark .homeHeader::after {
+    font-size: 14vw;
+  }
+
+  .dark .heroBg > div > p {
+    color: var(--fnt-main);
   }
 }
 
