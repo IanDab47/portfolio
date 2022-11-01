@@ -1,36 +1,33 @@
+// Next
 import styles from '../styles/About.module.css'
-import Image from 'next/image'
+// import Image from 'next/image'
+
+// React
+import { useState } from 'react'
 
 export default function about() {
+  // State
+  const [showCard, setShowCard] = useState(false)
+
+  // Handlers
+  const revealCard = () => {
+    setShowCard(true)
+  }
+
+  // Output
   return (
     <div className={styles.aboutInnerWrapper}>
       <section>
-        <div className={styles.infoCard}>
+        <div 
+          className={`${styles.card} ${showCard ? styles.info : null}`}
+          onClick={revealCard}
+        >
           <h1>{`Hi, I'm Ian!`}</h1>
+
           <p>After recently graduating from the General Assembly school for software engineering, I am ready to exceed in this new chapter of my life. I hope that it will be with one of you reading this right now!</p>
+
         </div>
-        
-
-        {/* load an image locally */}
-        <Image 
-          src='/vercel.svg'
-          alt='logo'
-          width={300}
-          height={300}
-          className='filter-white'
-        />
-
-        {/* load an image hosted on another domain */}
-        <Image 
-          src='https://i.redd.it/xdd1wlu4rwt31.jpg'
-          alt='uncanny pic of me'
-          width={400}
-          height={500}
-        />
-
       </section>
-
-
     </div >
   )
 }
