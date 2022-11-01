@@ -116,14 +116,14 @@
 }
 
 .heroImg {
-  position: absolute;
   aspect-ratio: 16/9;
-  width: 100vw;
+  position: absolute;
+  width: 97vw;
   min-height: 50vh;
   max-height: 100vh;
   right: 0; top: 0;
   object-fit: cover;
-  margin-right: -2rem;
+  overflow: clip;
 }
 
 .heroBg > div {
@@ -266,7 +266,7 @@
 /* }  */
 
 /* PHONES */
-@media (max-width: 600px) {
+@media (max-width: 784px) {
   .heroBg {
     min-height: 100vh;
   }
@@ -276,11 +276,12 @@
   }
 
   .heroImg {
-    display: block;
+    aspect-ratio: initial;
     position: relative;
-    width: initial;
-    height: 50vh;
-    margin-left: auto;
+    left: 0; right: initial;
+    display: inline;
+    width: 100vw;
+    object-position: right;
   }
 
   .homeHeader,

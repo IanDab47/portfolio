@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export default function about() {
   return (
-    <div className={styles.body}>
+    <div className={styles.aboutInnerWrapper}>
 
-      <div className={styles.card}>
+      <div className={styles.infoCard}>
         <h1>{`Hi, I'm Ian!`}</h1>
         <p>After recently graduating from the General Assembly school for software engineering, I am ready to exceed in this new chapter of my life. I hope that it will be with one of you reading this right now!</p>
       </div>

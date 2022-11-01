@@ -1,5 +1,14 @@
-.body {
+.aboutInnerWrapper {
   background: var(--bg-main);
   min-height: 100vh;
   z-index: -1;
 }
+
+.card {
+  display: initial;
+}
+
+.infoCard {
+  display: inital;
+}
+
