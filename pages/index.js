@@ -70,9 +70,9 @@ export default function Home() {
 
       <div id='home' className={styles.heroBg}>
         <img 
-        src='/self/hero_bg_lite.png'
-        className={styles.heroImg} 
-        style={{'--curr-w': screenWidth}}
+          src='/self/hero_bg_lite.png'
+          className={styles.heroImg} 
+          style={{'--curr-w': screenWidth}}
         />
 
         <div>

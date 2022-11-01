@@ -98,6 +98,7 @@
   overflow-y: visible;
   width: 100vw;
   min-height: 100vh;
+  max-height: 100vh;
   scroll-snap-type: block;
   z-index: 10;
   padding-bottom: 12rem;
@@ -191,7 +192,6 @@
   color: var(--fnt-main);
   line-height: .3em;
   user-select: none;
-  z-index: 90;
 }
 
 .heroBg > div a:is(:hover, :focus, :active) {
