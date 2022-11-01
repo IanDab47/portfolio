@@ -23,9 +23,9 @@
   --fnt-act-1: #c54;
   --fnt-act-2: #cb5;
   --fnt-act-3: #67d;
-  --sb-clr-1: rgb(220 220 220 / .4);
-  --sb-clr-2: rgb(220 220 220 / 1);
-  --sb-bg: rgb(90 90 90 / .4);
+  --sb-clr-1: rgb(220 220 220 / .7);
+  --sb-clr-2: rgb(240 225 217 / 1);
+  --sb-bg: rgb(90 90 90 / .1);
 }
 
 html,

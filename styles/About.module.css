@@ -1,7 +1,25 @@
 .aboutInnerWrapper {
   background: var(--bg-main);
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: -1;
+}
+
+.aboutInnerWrapper section {
+
+}
+
+.plxBack {
+
+}
+
+.plxFront {
+  
+}
+
+.noPlx {
+
 }
 
 .card {

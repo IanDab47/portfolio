@@ -2,9 +2,9 @@
   font-family: 'Lato';
   --bg-main: #010101;
   --fnt-main: #eee;
-  --fnt-act-1: #bbe;
-  --fnt-act-2: #beb;
-  --fnt-act-3: #dbb;
+  --fnt-act-1: #57e;
+  --fnt-act-2: #8e7;
+  --fnt-act-3: #e66;
   color: #eee;
   background: var(--bg-main);
   color-scheme: dark;
@@ -28,9 +28,9 @@
 
 /* Loading */
 .cover {
-  position: fixed;
+  position: absolute;
   top: 0;
-  width: 100vw; height: 100vmax;
+  width: 100vw; height: 100vh;
   background: var(--bg-main);
   z-index: 99;
 }
@@ -90,17 +90,18 @@
 
 /* HERO */
 .heroBg {
-  aspect-ratio: 16/9;
+  /* aspect-ratio: 16/9; */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow-x: clip;
   overflow-y: visible;
   width: 100vw;
-  min-height: 50vh;
-  max-height: 100vh;
+  min-height: 100vh;
   scroll-snap-type: block;
   z-index: 10;
-  margin-bottom: 8rem;
+  padding-bottom: 12rem;
+  margin-bottom: 12rem;
 }
 
 .heroBg::after {
@@ -116,13 +117,13 @@
 }
 
 .heroImg {
-  aspect-ratio: 16/9;
+  /* aspect-ratio: 16/9; */
   position: absolute;
-  width: 97vw;
-  min-height: 50vh;
-  max-height: 100vh;
+  max-width: 97vw;
+  min-height: 100vh;
   right: 0; top: 0;
   object-fit: cover;
+  object-position: right;
   overflow: clip;
 }
 
@@ -180,25 +181,26 @@
   user-select: none;
 }
 
-.heroBg > div > a {
+.heroBg > div a {
   display: block;
   position: relative;
-  width: max-content;
+  width: min-content;
   font-family: lato, sans-serif;
-  font-size: clamp(3.5rem, 6vw, 90rem); font-weight: bold; text-transform: uppercase;
+  font-size: clamp(6rem, 6vw, 90rem); 
+  font-weight: bold; text-transform: uppercase;
   color: var(--fnt-main);
   line-height: .3em;
   user-select: none;
   z-index: 90;
 }
 
-.heroBg > div > a:is(:hover, :focus, :active) {
+.heroBg > div a:is(:hover, :focus, :active) {
   font-size: clamp(4.0rem, 9vw, 90rem);
   color: var(--fnt-act-2);
   z-index: 1;
 }
 
-.heroBg > div > a::before {
+.heroBg > div a::before {
   content: attr(value);
   display: block;
   position: relative;
@@ -209,13 +211,13 @@
   transition: transform 80ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
-.heroBg > div > a:is(:hover, :focus, :active)::before {
+.heroBg > div a:is(:hover, :focus, :active)::before {
   color: var(--fnt-act-1);
   transform: translateY(275%);
   transition: transform 80ms cubic-bezier(.1,.8,.2,1) 40ms;
 }
 
-.heroBg > div > a::after {
+.heroBg > div a::after {
   content: attr(value);
   display: block;
   position: relative;
@@ -226,7 +228,7 @@
   transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
-.heroBg > div > a:is(:hover, :focus, :active)::after {
+.heroBg > div a:is(:hover, :focus, :active)::after {
   color: var(--fnt-act-3);
   margin-top: 1em;
   transform: translateY(-80%);
@@ -251,6 +253,7 @@
 
   .dark .homeHeader {
     font-family: 'Lato', sans-serif;
+    font-size: 11vw;
     font-weight: 900;
     color: var(--fnt-main)
   }
@@ -276,12 +279,16 @@
   }
 
   .heroImg {
-    aspect-ratio: initial;
     position: relative;
-    left: 0; right: initial;
+    left: 0; right: 0;
     display: inline;
-    width: 100vw;
+    max-width: 100vw;
+    min-height: 50vh;
     object-position: right;
+  }
+  
+  .heroBg > div a {
+    font-size: clamp(3.5rem, 6vw, 90rem); 
   }
 
   .homeHeader,
@@ -315,6 +322,7 @@
 
   .dark .homeHeader::after {
     font-size: 14vw;
+    color: var(--fnt-main);
   }
 
   .dark .heroBg > div > p {

@@ -47,28 +47,6 @@ export default function Home() {
   }
 
   // Output
-  const lightLinks = () => {
-    return (
-      <>
-        <p>______</p>
-        <a href='#about' value='about'>about</a>
-        <a href='#skills' value='skills'>skills</a>
-        <a href='#projects' value='projects'>projects</a>
-      </>
-    )
-  }
-
-  const darkLinks = () => {
-    return (
-      <>
-        <p>PORTFOLIO</p>
-        <Link href='#about'>about</Link>
-        <Link href='#skills'>skills</Link>
-        <Link href='#projects'>projects</Link>
-      </>
-    )
-  }
-
   return (
     <div className={`${displayHome} ${styles.scrollSnap} ${isDark ? styles.dark : null}`}>
       <Head>
@@ -103,9 +81,11 @@ export default function Home() {
 
         <div style={{ marginLeft: '8vw' }}>
           <p>______</p>
-          <a href='#about' value='about'>about</a>
-          <a href='#skills' value='skills'>skills</a>
-          <a href='#projects' value='projects'>projects</a>
+          <div className={`TABLE OF CONTENTS ${styles.toc}`} >
+            <a href='#about' value='about'>about</a>
+            <a href='#skills' value='skills'>skills</a>
+            <a href='#projects' value='projects'>projects</a>
+          </div>
         </div>
         
       </div>
