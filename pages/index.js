@@ -18,6 +18,7 @@ export default function Home() {
   // States
   const [delay, setDelay] = useState(800)
   const [isDark, setIsDark] = useState(false)
+  const [loading, setLoading] =useState(true)
   const [loadPage, setLoadPage] = useState(null)
   const [displayHome, setDisplayHome] = useState(null)
   const [screenWidth, setScreenWidth] = useState(0)
@@ -30,7 +31,7 @@ export default function Home() {
     function handleResize() {
       setScreenWidth(window.innerWidth)
     }
-    
+
     window.addEventListener('resize', handleResize)
 
     return _ => window.removeEventListener('resize', handleResize)
@@ -38,6 +39,7 @@ export default function Home() {
 
   // Handlers
   const killLoad = () => {
+    setLoading(false)
     setLoadPage(styles.fadeOut)
     setDisplayHome(styles.glassOff)
   }
@@ -91,7 +93,7 @@ export default function Home() {
       </div>
       
       <div id='about'>
-        <About />
+        <About loading={loading}/>
       </div>
 
       <div id='skills'>

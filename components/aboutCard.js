@@ -7,6 +7,13 @@ import { useState } from 'react'
 export default function AboutCard({ z }) {
   // State
   const [showCard, setShowCard] = useState(false)
+  const [cardStyles, setCardStyles] = useState({
+    axis: -1,
+    color: -1,
+    ratio: -1,
+    posX: -1,
+    posY: -1
+  })
 
   // Handlers
   const revealCard = () => {
@@ -15,13 +22,13 @@ export default function AboutCard({ z }) {
 
   const rndStyleGen = () => {
     // return nulls if window is not rendered
-    if(typeof window !== 'object') return [-1, -1, -1, -1, -1]
+    if(typeof window !== 'object') return 
 
     // rnd generate numbers for style variables
     // choose which axis for the card to be
     const axisSelect = Math.round(Math.random()) // 0 == horizontal, 1 == vertical
     // choose one of 5 colors
-    const colorSelect = Math.floor(Math.random() * 5) 
+    const colorSelect = Math.floor(Math.random() * 8 % 5) 
     // generate a rnd int between 6 and 11
     const sizeNarrowGen = Math.floor(Math.random() * 5 + 6)
     // generate a rnd int between 11 and 19
@@ -33,7 +40,13 @@ export default function AboutCard({ z }) {
       sizeWidGen / sizeNarrowGen // Horizontal Calculation
     // generate a rnd position on the screen
     const [rndXPos, rndYPos] = rndPosGen(axisSelect, cardRatio, sizeNarrowGen, sizeWidGen)
-    return [axisSelect, colorSelect, cardRatio, rndXPos, rndYPos]
+    setCardStyles({
+      axis: axisSelect,
+      color: colorSelect,
+      ratio: cardRatio,
+      posX: rndXPos,
+      posY: rndYPos
+    })
   }
 
   const rndPosGen = (axis, ratio, narrow, wide) => {
@@ -54,10 +67,7 @@ export default function AboutCard({ z }) {
   }
 
   // Output
-  const [axis, color, ratio, posX, posY] = rndStyleGen() 
-  
-  // if(z !== 2 && typeof window === 'object')
-  console.log(color, ratio, posX, posY)
+  if(axis === -1) [axis, color, ratio, posX, posY] = rndStyleGen()
 
   return (
     <div 
