@@ -30,7 +30,7 @@ export default function Home() {
     function handleResize() {
       setScreenWidth(window.innerWidth)
     }
-
+    
     window.addEventListener('resize', handleResize)
 
     return _ => window.removeEventListener('resize', handleResize)

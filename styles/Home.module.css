@@ -5,6 +5,8 @@
   --fnt-act-1: #57e;
   --fnt-act-2: #8e7;
   --fnt-act-3: #e66;
+  --fnt-act-4: #dd5;
+  --fnt-act-5: #d8d;
   color: #eee;
   background: var(--bg-main);
   color-scheme: dark;

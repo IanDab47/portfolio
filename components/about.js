@@ -5,28 +5,31 @@ import styles from '../styles/About.module.css'
 // React
 import { useState } from 'react'
 
+// Components
+import AboutCard from './aboutCard'
+
 export default function about() {
-  // State
-  const [showCard, setShowCard] = useState(false)
-
-  // Handlers
-  const revealCard = () => {
-    setShowCard(true)
-  }
-
   // Output
+  const generateCards = () => {
+    let zPosArr = [0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1]
+    zPosArr = zPosArr.sort((a, b) => .5 - Math.random())
+    
+    const cards = zPosArr.map((z, i) => {
+      return (
+        <AboutCard
+          key={`card_${i}`}
+          z={z}
+        />
+      )
+    })
+
+    return cards
+  }
+  
   return (
     <div className={styles.aboutInnerWrapper}>
       <section>
-        <div 
-          className={`${styles.card} ${showCard ? styles.info : null}`}
-          onClick={revealCard}
-        >
-          <h1>{`Hi, I'm Ian!`}</h1>
-
-          <p>After recently graduating from the General Assembly school for software engineering, I am ready to exceed in this new chapter of my life. I hope that it will be with one of you reading this right now!</p>
-
-        </div>
+        {generateCards()}
       </section>
     </div >
   )
