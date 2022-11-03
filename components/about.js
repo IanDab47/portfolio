@@ -3,33 +3,38 @@ import styles from '../styles/About.module.css'
 // import Image from 'next/image'
 
 // React
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Components
 import AboutCard from './aboutCard'
 
-export default function about() {
+export default function about({ loading }) {
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    generateCards()
+  }, [loading])
+
   // Output
-  const generateCards = ({ loading }) => {
+  const generateCards = () => {
     let zPosArr = [0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1]
     zPosArr = zPosArr.sort((a, b) => .5 - Math.random())
     
-    const cards = zPosArr.map((z, i) => {
-        return (
-          <AboutCard
-            key={`card_${i}`}
-            z={z}
-          />
-        )
-      })
-
-    return cards
+    setCards(zPosArr.map((z, i) => {
+      console.log(`card_${i}`)
+      return (
+        <AboutCard
+          key={`card_${i}`}
+          z={z}
+        />
+      )
+    }))
   }
   
   return (
     <div className={styles.aboutInnerWrapper}>
       <section>
-        {loading ? generateCards() : ''}
+        {cards}
       </section>
     </div >
   )

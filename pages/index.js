@@ -18,7 +18,7 @@ export default function Home() {
   // States
   const [delay, setDelay] = useState(800)
   const [isDark, setIsDark] = useState(false)
-  const [loading, setLoading] =useState(true)
+  const [loading, setLoading] =useState(false)
   const [loadPage, setLoadPage] = useState(null)
   const [displayHome, setDisplayHome] = useState(null)
   const [screenWidth, setScreenWidth] = useState(0)
@@ -39,7 +39,7 @@ export default function Home() {
 
   // Handlers
   const killLoad = () => {
-    setLoading(false)
+    setLoading(true)
     setLoadPage(styles.fadeOut)
     setDisplayHome(styles.glassOff)
   }

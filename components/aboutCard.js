@@ -67,7 +67,8 @@ export default function AboutCard({ z }) {
   }
 
   // Output
-  if(axis === -1) [axis, color, ratio, posX, posY] = rndStyleGen()
+  if(cardStyles.axis === -1) rndStyleGen()
+  console.log(cardStyles)
 
   return (
     <div 
@@ -75,17 +76,17 @@ export default function AboutCard({ z }) {
         ${styles.card} 
         ${showCard ? styles.info : null}
         ${
-          color === 0 ? styles.colorOne :
-          color === 1 ? styles.colorTwo :
-          color === 2 ? styles.colorThree :
-          color === 3 ? styles.colorFour :
-          color === 4 ? styles.colorFive : null
+          cardStyles.color === 0 ? styles.colorOne :
+          cardStyles.color === 1 ? styles.colorTwo :
+          cardStyles.color === 2 ? styles.colorThree :
+          cardStyles.color === 3 ? styles.colorFour :
+          cardStyles.color === 4 ? styles.colorFive : null
         }
       `}
       style={{ 
-        '--ratio': ratio, 
-        '--posX': `${posX}`, 
-        '--posY': `${posY}` 
+        '--ratio': cardStyles.ratio, 
+        '--posX': `${cardStyles.posX}`, 
+        '--posY': `${cardStyles.posY}` 
       }}
       onClick={revealCard}
     >
