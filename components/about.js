@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 // Components
 import AboutCard from './aboutCard'
 
-export default function about({ loading }) {
+export default function About({ loading }) {
   const [cards, setCards] = useState([])
 
   useEffect(() => {

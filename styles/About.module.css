@@ -1,6 +1,8 @@
 .aboutInnerWrapper {
   background: var(--bg-main);
+  height: max-content;
   min-height: 100vh;
+  max-height: 100vmax;
   overflow-x: hidden;
   overflow-y: visible;
   z-index: 99;
@@ -31,7 +33,7 @@
 }
 
 .card {
-  aspect-ratio: var( --ratio);
+  aspect-ratio: var(--ratio);
   position: absolute;
   left: calc(var(--posX) * 1px); top: calc(var(--posY) * 1px);
   display: flex;
@@ -45,6 +47,7 @@
   padding: 1.2rem;
   caret-color: transparent;
   transform: scale(100%);
+  transform-style: preserve-3d;
   transition: transform 120ms ease-out;
 }
 

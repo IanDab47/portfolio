@@ -51,24 +51,23 @@ export default function AboutCard({ z, info }) {
 
   const rndPosGen = (axis, ratio, narrow, wide) => {
     // Declare variables for clarity
-    const screenX = window.innerWidth
-    const screenY = window.innerHeight
+    const screenX = window.innerWidth,
+          screenY = window.innerHeight
     // Calculate card position based on inputs and window size
     const rndXPos = axis ?
-      Math.floor(Math.random() * screenX) - Math.ceil(ratio * narrow) // Vertical
+      console.log('X:', Math.floor(Math.random() * (screenX * .8) + (screenX * .1)) - Math.ceil(ratio * narrow)) // Vertical
       :
-      Math.floor(Math.random() * screenX) - Math.ceil(ratio * wide) // Horizontal
+      console.log(Math.floor(Math.random() * (screenX * .8) + (screenX * .1)) - Math.ceil(ratio * wide)) // Horizontal
     const rndYPos = axis ?
-      Math.floor(Math.random() * screenY) - Math.ceil(ratio * wide) // Vertical
+      console.log('Y:', Math.floor(Math.random() * (screenY * .8)) - Math.ceil(ratio * wide)) // Vertical
       :
-      Math.floor(Math.random() * screenY) - Math.ceil(ratio * narrow) // Horizontal
+      console.log(Math.floor(Math.random() * (screenY * .8)) - Math.ceil(ratio * narrow)) // Horizontal
 
     return [rndXPos, rndYPos]
   }
 
   // Output
   if(cardStyles.axis === -1) rndStyleGen()
-  console.log(cardStyles)
 
   return (
     <div 
