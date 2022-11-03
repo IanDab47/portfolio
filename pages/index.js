@@ -62,7 +62,7 @@ export default function Home() {
         setIsDark={setIsDark}
       />
 
-      <div className={`${styles.center} ${styles.cover} ${loadPage}`} style={{position: 'absolute'}}>
+      <div className={`${styles.center} ${styles.cover} ${loadPage}`}>
         <Loading
           killLoad={killLoad}
           addDelay={addDelay}
@@ -96,13 +96,13 @@ export default function Home() {
         <About loading={loading}/>
       </div>
 
-      <div id='skills'>
+      {/* <div id='skills'>
         Section about skills
       </div>
 
       <div id='projects'>
         Section about projects
-      </div>
+      </div> */}
 
     </div>
   )

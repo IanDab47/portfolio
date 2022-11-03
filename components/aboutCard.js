@@ -4,7 +4,7 @@ import styles from '../styles/About.module.css'
 // React
 import { useState } from 'react'
 
-export default function AboutCard({ z }) {
+export default function AboutCard({ z, info }) {
   // State
   const [showCard, setShowCard] = useState(false)
   const [cardStyles, setCardStyles] = useState({
@@ -76,6 +76,11 @@ export default function AboutCard({ z }) {
         ${styles.card} 
         ${showCard ? styles.info : null}
         ${
+          z === 0 ? styles.plxBack :
+          z === 1 ? styles.noPlx :
+          z === 2 ? styles.plxFront : null
+        }
+        ${
           cardStyles.color === 0 ? styles.colorOne :
           cardStyles.color === 1 ? styles.colorTwo :
           cardStyles.color === 2 ? styles.colorThree :
@@ -90,9 +95,9 @@ export default function AboutCard({ z }) {
       }}
       onClick={revealCard}
     >
-      <h1>{`Hi, I'm Ian!`}</h1>
+      <h1>{info ? info.title : null}</h1>
       
-      <p>After recently graduating from the General Assembly school for software engineering, I am ready to exceed in this new chapter of my life. I hope that it will be with one of you reading this right now!</p>
+      <p>{info ? info.description : null}</p>
 
     </div>
   )

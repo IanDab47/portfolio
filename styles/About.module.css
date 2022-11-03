@@ -2,27 +2,33 @@
   background: var(--bg-main);
   min-height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
-  z-index: -1;
+  overflow-y: visible;
+  z-index: 99;
+}
+
+.aboutInnerWrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .aboutInnerWrapper section {
   position: relative;
   width: 100%;
-  height: 100%;
+  perspective: 10rem;
 }
 
-/* .plxBack {
-
+.plxBack {
+  transform: translateZ(-10rem);
+  z-index: -10;
 }
 
 .plxFront {
-  
+  z-index: 10;
 }
 
 .noPlx {
-
-} */
+  transform: translateZ(-5rem);
+  z-index: 0;
+}
 
 .card {
   aspect-ratio: var( --ratio);
@@ -38,7 +44,13 @@
   box-shadow: 0 0 .25rem;
   padding: 1.2rem;
   caret-color: transparent;
-  isolation: isolate;
+  transform: scale(100%);
+  transition: transform 120ms ease-out;
+}
+
+.card:hover {
+  transform: scale(108%);
+  transition: transform 120ms ease-in;
 }
 
 .card::before {
@@ -88,7 +100,7 @@
   height: max-content;
   background: var(--bg-main);
   color: var(--fnt-main);
-  /* z-index: 10; */
+  z-index: 10;
   cursor: default;
 }
 
