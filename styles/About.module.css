@@ -39,11 +39,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 14rem;
+  width: calc(var(--width) * 1rem);
   height: max-content;
-  background: var(var(--color));
+  background: var(--color);
   border-radius: .75rem;
-  box-shadow: 0 0 .25rem;
+  box-shadow: 0 0 .5rem -.15rem;
   padding: 1.2rem;
   caret-color: transparent;
   transform: scale(100%);
@@ -96,10 +96,10 @@
 }
 
 .info {
-  aspect-ratio: var( --ratio);
+  aspect-ratio: var(--ratio);
   position: absolute;
   left: calc(var(--posX) * 1px); top: calc(var(--posY) * 1px);
-  width: 14rem;
+  width: calc(var(--width) * 1rem);
   height: max-content;
   background: var(--bg-main);
   color: var(--fnt-main);
@@ -124,6 +124,10 @@
   .card::after {
     content: 'Click to reveal card';
     opacity: 1;
+  }
+
+  .info.card {
+    width: 14rem;
   }
 }
 

@@ -83,7 +83,7 @@ export default function Home() {
 
         <div style={{ marginLeft: '8vw' }}>
           <p>______</p>
-          <div className={`TABLE OF CONTENTS ${styles.toc}`} >
+          <div className={`TABLE OF CONTENTS`} >
             <a href='#about' value='about'>about</a>
             <a href='#skills' value='skills'>skills</a>
             <a href='#projects' value='projects'>projects</a>

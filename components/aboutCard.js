@@ -12,7 +12,8 @@ export default function AboutCard({ z, info }) {
     color: -1,
     ratio: -1,
     posX: -1,
-    posY: -1
+    posY: -1,
+    width: -1
   })
 
   // Handlers
@@ -24,7 +25,7 @@ export default function AboutCard({ z, info }) {
     // return nulls if window is not rendered
     if(typeof window !== 'object') return 
 
-    // rnd generate numbers for style variables
+    // rng for style variables
     // choose which axis for the card to be
     const axisSelect = Math.round(Math.random()) // 0 == horizontal, 1 == vertical
     // choose one of 5 colors
@@ -32,42 +33,49 @@ export default function AboutCard({ z, info }) {
     // generate a rnd int between 6 and 11
     const sizeNarrowGen = Math.floor(Math.random() * 5 + 6)
     // generate a rnd int between 11 and 19
-    const sizeWidGen = Math.floor(Math.random() * 8 + 11)
+    const sizeWideGen = Math.floor(Math.random() * 8 + 11)
     // generate aspect ratio
     const cardRatio = axisSelect ?
-      sizeNarrowGen / sizeWidGen // Vertical Calculation
+      sizeNarrowGen / sizeWideGen // Vertical Calculation
       :
-      sizeWidGen / sizeNarrowGen // Horizontal Calculation
+      sizeWideGen / sizeNarrowGen // Horizontal Calculation
     // generate a rnd position on the screen
-    const [rndXPos, rndYPos] = rndPosGen(axisSelect, cardRatio, sizeNarrowGen, sizeWidGen)
+    const [rndXPos, rndYPos] = rndPosGen(axisSelect, cardRatio, sizeNarrowGen, sizeWideGen)
     setCardStyles({
       axis: axisSelect,
       color: colorSelect,
       ratio: cardRatio,
       posX: rndXPos,
-      posY: rndYPos
+      posY: rndYPos,
+      width: axisSelect ? sizeNarrowGen : sizeWideGen
     })
   }
 
   const rndPosGen = (axis, ratio, narrow, wide) => {
     // Declare variables for clarity
     const screenX = window.innerWidth,
-          screenY = window.innerHeight
+          screenY = window.innerHeight,
+          seedX = Math.floor(Math.random() * (screenX * .8) + (screenX * .1)),
+          seedY = Math.floor(Math.random() * screenY),
+          remConv = window.innerWidth >= 3840 ? 32 :
+                    window.innerWidth >= 2560 ? 24 : 16
+
     // Calculate card position based on inputs and window size
     const rndXPos = axis ?
-      console.log('X:', Math.floor(Math.random() * (screenX * .8) + (screenX * .1)) - Math.ceil(ratio * narrow)) // Vertical
+      seedX - Math.ceil(ratio * narrow * remConv) // Vertical
       :
-      console.log(Math.floor(Math.random() * (screenX * .8) + (screenX * .1)) - Math.ceil(ratio * wide)) // Horizontal
+      seedX - Math.ceil(ratio * wide * remConv) // Horizontal
     const rndYPos = axis ?
-      console.log('Y:', Math.floor(Math.random() * (screenY * .8)) - Math.ceil(ratio * wide)) // Vertical
+      seedY - Math.ceil(ratio * wide * remConv) // Vertical
       :
-      console.log(Math.floor(Math.random() * (screenY * .8)) - Math.ceil(ratio * narrow)) // Horizontal
+      seedY - Math.ceil(ratio * narrow * remConv) // Horizontal
 
     return [rndXPos, rndYPos]
   }
 
   // Output
   if(cardStyles.axis === -1) rndStyleGen()
+  console.log(cardStyles)
 
   return (
     <div 
@@ -90,7 +98,8 @@ export default function AboutCard({ z, info }) {
       style={{ 
         '--ratio': cardStyles.ratio, 
         '--posX': `${cardStyles.posX}`, 
-        '--posY': `${cardStyles.posY}` 
+        '--posY': `${cardStyles.posY}`,
+        '--width': cardStyles.width
       }}
       onClick={revealCard}
     >

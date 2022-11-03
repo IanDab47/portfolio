@@ -90,6 +90,7 @@
 
 /* HERO */
 .heroBg {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -99,7 +100,7 @@
   min-height: 100vh;
   max-height: 100vh;
   scroll-snap-type: block;
-  z-index: 10;
+  /* z-index: 10; */
   padding-bottom: 12rem;
   margin-bottom: 12rem;
 }
