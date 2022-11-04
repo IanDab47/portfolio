@@ -1,16 +1,19 @@
-// import built-in link from next
+// Next
 import Link from 'next/link'
+import styles from '../styles/NavBar.module.css'
 
-export default function NavBar() {
+export default function NavBar({ isDark }) {
   return (
-    <nav style={{position: 'fixed', top: 0, width: '100vw', textAlign: 'center', zIndex: 10}}>
-      <Link href='#'>Home - </Link>
+    <nav className={`${styles.navWrapper} ${isDark ? styles.dark : null}`}>
+      <div className={`${styles.nav}`}>
+        <Link href='#'>Home </Link>{' - '}
 
-      <Link href='#about'>About Me - </Link>
+        <Link href='#about'>About Me </Link>{' - '}
 
-      <Link href='#skills'>Skills - </Link>
+        <Link href='#skills'> Skills </Link>{' - '}
 
-      <Link href='#projects'>Projects</Link>
+        <Link href='#projects'> Projects</Link>
+      </div>
     </nav>
   )
 }

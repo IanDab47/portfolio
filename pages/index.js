@@ -14,10 +14,9 @@ import Loading from '../components/loading'
 import ModeSwitch from '../components/modeSwitch'
 import About from '../components/about'
 
-export default function Home() {
+export default function Home({ isDark, setIsDark }) {
   // States
   const [delay, setDelay] = useState(800)
-  const [isDark, setIsDark] = useState(false)
   const [loading, setLoading] =useState(false)
   const [loadPage, setLoadPage] = useState(null)
   const [displayHome, setDisplayHome] = useState(null)
@@ -26,7 +25,6 @@ export default function Home() {
   // Hooks
   useEffect(() => {
     if(screenWidth === 0) setScreenWidth(window.innerWidth)
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches && screenWidth > 600) setIsDark(true)
     
     function handleResize() {
       setScreenWidth(window.innerWidth)

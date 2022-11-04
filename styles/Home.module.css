@@ -28,10 +28,6 @@
   width: 100vw; height: 100vh;
 }
 
-/* .scrollSnap {
-  scroll-snap-type: y mandatory;
-} */
-
 /* Loading */
 .cover {
   position: fixed;
@@ -103,7 +99,6 @@
   width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  scroll-snap-type: block;
   z-index: -99;
   padding-bottom: 12rem;
   margin-bottom: 12rem;
@@ -237,6 +232,13 @@
   transform: translateY(-80%);
   transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 80ms;
 }
+
+.heroBg > div a,
+.heroBg > div a::after,
+.heroBg > div a::before {
+  outline: none;
+}
+
 /* 
 .aboutWrapper {
   background: var(--bg-main);

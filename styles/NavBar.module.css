@@ -1,0 +1,48 @@
+.dark {
+  font-family: 'Lato';
+  --bg-main: #010101;
+  --fnt-main: #eee;
+  --fnt-act-1: #57e;
+  --fnt-act-2: #6c5;
+  --fnt-act-3: #e66;
+  --fnt-act-4: #d7d755;
+  --fnt-act-5: #d8d;
+  color: #eee;
+  background: var(--bg-main);
+  color-scheme: dark;
+}
+
+.navWrapper {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / .2),
+    transparent
+  );
+  z-index: 10;
+  padding-bottom: 2.5rem;
+  pointer-events: none;
+}
+
+.nav {
+  width: max-content;
+  background: var(--fnt-act-1);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bg-main);
+  text-align: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+  padding-block: .5rem;
+  padding-inline: 4vw;
+  margin-inline: auto;
+  pointer-events: initial;
+  user-select: none;
+}
+
+.dark .nav {
+  color: var(--fnt-main);
+}
