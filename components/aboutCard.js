@@ -4,7 +4,7 @@ import styles from '../styles/About.module.css'
 // React
 import { useState } from 'react'
 
-export default function AboutCard({ z, info }) {
+export default function AboutCard({ info, i, z }) {
   // State
   const [showCard, setShowCard] = useState(false)
   const [cardStyles, setCardStyles] = useState({
@@ -18,7 +18,7 @@ export default function AboutCard({ z, info }) {
 
   // Handlers
   const revealCard = () => {
-    setShowCard(true)
+    z === 2 ? setShowCard(true) : null
   }
 
   const rndStyleGen = () => {
@@ -27,27 +27,32 @@ export default function AboutCard({ z, info }) {
 
     // rng for style variables
     // choose which axis for the card to be
-    const axisSelect = Math.round(Math.random()) // 0 == horizontal, 1 == vertical
+    const axisSelect = z === 2 ? 1 : i % 2 // 0 == horizontal, 1 == vertical
     // choose one of 5 colors
-    const colorSelect = Math.floor(Math.random() * 8 % 5) 
+    const colorSelect = Math.floor(Math.random() * 5 % 5) 
     // generate a rnd int between 6 and 11
     const sizeNarrowGen = Math.floor(Math.random() * 5 + 6)
     // generate a rnd int between 11 and 19
     const sizeWideGen = Math.floor(Math.random() * 8 + 11)
     // generate aspect ratio
-    const cardRatio = axisSelect ?
+    const cardRatio = z === 2 ? 9 / 16 : axisSelect ?
       sizeNarrowGen / sizeWideGen // Vertical Calculation
       :
       sizeWideGen / sizeNarrowGen // Horizontal Calculation
     // generate a rnd position on the screen
-    const [rndXPos, rndYPos] = rndPosGen(axisSelect, cardRatio, sizeNarrowGen, sizeWideGen)
+    const [rndXPos, rndYPos] = z === 2 ? 
+      [info.styles.posX, info.styles.posY]
+      :
+      rndPosGen(axisSelect, cardRatio, sizeNarrowGen, sizeWideGen) 
+    
+    // Assign variables to styles state
     setCardStyles({
       axis: axisSelect,
       color: colorSelect,
       ratio: cardRatio,
       posX: rndXPos,
       posY: rndYPos,
-      width: axisSelect ? sizeNarrowGen : sizeWideGen
+      width: axisSelect ? info.styles.width | sizeNarrowGen : sizeWideGen
     })
   }
 
@@ -75,12 +80,13 @@ export default function AboutCard({ z, info }) {
 
   // Output
   if(cardStyles.axis === -1) rndStyleGen()
-  console.log(cardStyles)
+  if(info.styles.width > 0) console.log(z, info.styles, cardStyles.posX, cardStyles.posY)
 
   return (
     <div 
       className={`
         ${styles.card} 
+        ${z === 2 ? styles.clickMe : null}
         ${showCard ? styles.info : null}
         ${
           z === 0 ? styles.plxBack :

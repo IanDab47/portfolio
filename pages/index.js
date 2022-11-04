@@ -96,13 +96,13 @@ export default function Home() {
         <About loading={loading}/>
       </div>
 
-      {/* <div id='skills'>
+      <div id='skills'>
         Section about skills
       </div>
 
       <div id='projects'>
         Section about projects
-      </div> */}
+      </div>
 
     </div>
   )

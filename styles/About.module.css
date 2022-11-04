@@ -2,10 +2,9 @@
   background: var(--bg-main);
   height: max-content;
   min-height: 100vh;
-  max-height: 100vmax;
-  overflow-x: hidden;
-  overflow-y: visible;
-  z-index: 99;
+  /* max-height: max-content; */
+  overflow-x: clip;
+  z-index: -1;
 }
 
 .aboutInnerWrapper::-webkit-scrollbar {
@@ -15,11 +14,12 @@
 .aboutInnerWrapper section {
   position: relative;
   width: 100%;
-  perspective: 10rem;
+  perspective: 20rem;
 }
 
 .plxBack {
-  transform: translateZ(-10rem);
+  transform: translateZ(-20rem);
+  opacity: .7;
   z-index: -10;
 }
 
@@ -28,7 +28,8 @@
 }
 
 .noPlx {
-  transform: translateZ(-5rem);
+  transform: translateZ(-10rem);
+  opacity: .8;
   z-index: 0;
 }
 
@@ -43,17 +44,12 @@
   height: max-content;
   background: var(--color);
   border-radius: .75rem;
-  box-shadow: 0 0 .5rem -.15rem;
+  box-shadow: 0 0 .5rem -.3rem;
   padding: 1.2rem;
   caret-color: transparent;
   transform: scale(100%);
   transform-style: preserve-3d;
   transition: transform 120ms ease-out;
-}
-
-.card:hover {
-  transform: scale(108%);
-  transition: transform 120ms ease-in;
 }
 
 .card::before {
@@ -65,10 +61,15 @@
   background: var(--color);
   opacity: 1;
   border-radius: .75rem;
-  transition: opacity 200ms linear;
+  transition: opacity 300ms ease-in-out;
 }
 
-.card::after {
+.clickMe:hover {
+  transform: scale(108%);
+  transition: transform 200ms cubic-bezier(.1,.8,.2,1);
+}
+
+.clickMe::after {
   content: 'Click to reveal card';
   position: absolute;
   top: 0; left: 0;
@@ -78,12 +79,12 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 120ms linear;
+  transition: opacity 300ms linear;
 }
 
-.card:hover::after {
+.clickMe:hover::after {
   opacity: 1;
-  transition: opacity 120ms linear;
+  transition: opacity 300ms linear;
 }
 
 .card > h1 {
@@ -121,13 +122,21 @@
 
 /* PHONES */
 @media (max-width: 784px) {
+  
   .card::after {
     content: 'Click to reveal card';
     opacity: 1;
   }
 
-  .info.card {
-    width: 14rem;
+  .info, .card.clickMe {
+    position: relative;
+    left: calc(var(--posX) * 1px / 2); top: 1rem;
+    width: 12rem;
+    margin-bottom: 2rem;
+  }
+
+  .card.info::after {
+    opacity: 0;
   }
 }
 
