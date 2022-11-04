@@ -77,7 +77,8 @@ export default function About({ loading }) {
       const info = z === 2 ? aboutMe[infoArr.shift()] : aboutMe.default
       // if(z === 2) console.log(info)
       return (
-        <section
+        <section 
+          key={`card_${i}`}
           className={`
             ${
               z === 0 ? styles.plxBack :
@@ -87,7 +88,6 @@ export default function About({ loading }) {
           `}
         >
           <AboutCard
-            key={`card_${i}`}
             info={info}
             i={i}
             z={z}
