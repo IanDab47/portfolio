@@ -34,13 +34,13 @@ export default function About({ loading }) {
     // Object of info
     const aboutMe = {
       0: {
-        title: `Hi, I'm Ian`,
-        description: `I'm a software engineer who loves to pursue unique design and new technologies.`,
+        title: `Hi, I\'m Ian`,
+        description: `I\'m a software engineer who loves to pursue unique design and new technologies.`,
         styles: { width: (screenX / 214 + 6) * (16 / remConv), posX: (screenX / 2) - (10 * remConv / 2), posY: (screenY / 2) - (16 * remConv / 2) }
       },
       1: {
-        title: `I've been programming for over 10 years now!`,
-        description: `I started with Java and C++ in high school, but I'm most proficient in JavaScript and TypeScript.`,
+        title: `I\'ve been programming for over 10 years now!`,
+        description: `I started with Java and C++ in high school, but I\'m most proficient in JavaScript and TypeScript.`,
         styles: { width: (screenX / 214 + 6) * (16 / remConv), posX: screenX / 20, posY: screenY / 6 }
       },
       2: {
@@ -50,7 +50,7 @@ export default function About({ loading }) {
       },
       3: {
         title: `My hobbies keep me motivated!`,
-        description: `While I'm currently focused on mechanical keyboards, my other hobbies give me new inspiration and motivate me to strive to be better!`,
+        description: `While I\'m currently focused on mechanical keyboards, my other hobbies give me new inspiration and motivate me to strive to be better!`,
         styles: { width: (screenX / 273 + 8.5) * (16 / remConv), posX: screenX * 4 / 17, posY: screenY * 5 / 9 }
       },
       4: {
