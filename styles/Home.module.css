@@ -28,9 +28,9 @@
   width: 100vw; height: 100vh;
 }
 
-.scrollSnap {
+/* .scrollSnap {
   scroll-snap-type: y mandatory;
-}
+} */
 
 /* Loading */
 .cover {
