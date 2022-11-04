@@ -31,7 +31,7 @@ export default function AboutCard({ info, i, z }) {
     // choose which axis for the card to be
     const axisSelect = z === 2 ? 1 : i % 2 // 0 == horizontal, 1 == vertical
     // choose one of 5 colors
-    const colorSelect = Math.floor((i + seedX) % 5) 
+    const colorSelect = Math.floor((i + Math.round(seedX)) % 5) 
     // generate a rnd int between 6 and 11
     const sizeNarrowGen = Math.floor(seedX * 5 + 6)
     // generate a rnd int between 11 and 19
