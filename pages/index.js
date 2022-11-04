@@ -70,7 +70,7 @@ export default function Home() {
         />
       </div>
 
-      <div id='home' className={styles.heroBg}>
+      <div id='home' className={`${styles.heroBg} ${loading ? null : styles.hidden}`}>
         <img 
           src='/self/hero_bg_lite.png'
           className={styles.heroImg} 
@@ -92,7 +92,7 @@ export default function Home() {
         
       </div>
       
-      <div id='about' className={styles.aboutWrapper}>
+      <div id='about' className={`${styles.aboutWrapper} ${loading ? null : styles.hidden}`}>
         <About loading={loading}/>
       </div>
 
