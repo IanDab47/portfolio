@@ -35,28 +35,28 @@ export default function About({ loading }) {
     const aboutMe = {
       0: {
         title: `Hi, I'm Ian`,
-        description: `I'm a software engineer who loves to pursue creative design in any way imaginable.`,
-        styles: { width: 10, posX: (screenX / 2) - (10 * remConv / 2), posY: (screenY / 2) - (16 * remConv / 2) }
+        description: `I'm a software engineer who loves to pursue unique design and new technologies.`,
+        styles: { width: (screenX / 214 + 6) * (16 / remConv), posX: (screenX / 2) - (10 * remConv / 2), posY: (screenY / 2) - (16 * remConv / 2) }
       },
       1: {
         title: `I've been programming for over 10 years now!`,
-        description: `I started with Java and C++ in high school, but I'm most proficient in JS/TS.`,
-        styles: { width: 13, posX: screenX / 9, posY: screenY / 6 }
+        description: `I started with Java and C++ in high school, but I'm most proficient in JavaScript and TypeScript.`,
+        styles: { width: (screenX / 214 + 6) * (16 / remConv), posX: screenX / 20, posY: screenY / 6 }
       },
       2: {
         title: `Being a former video and audio producer has helped me a lot!`,
         description: `Learning new programs and adapting to new environments are my strongest qualities because of it!`,
-        styles: { width: 14, posX: screenX * 3 / 4, posY: screenY / 12 }
+        styles: { width: (screenX / 294 + 9) * (16 / remConv), posX: screenX * 3 / 4, posY: screenY / 12 }
       },
       3: {
         title: `My hobbies keep me motivated!`,
         description: `While I'm currently focused on mechanical keyboards, my other hobbies give me new inspiration and motivate me to strive to be better!`,
-        styles: { width: 11, posX: screenX * 4 / 13, posY: screenY * 5 / 9 }
+        styles: { width: (screenX / 273 + 8.5) * (16 / remConv), posX: screenX * 4 / 17, posY: screenY * 5 / 9 }
       },
       4: {
         title: ``,
         description: ``,
-        styles: { width: 14, posX: screenX * 2 / 3, posY: screenY * 4 / 7 }
+        styles: { width: 14  * (16 / remConv), posX: screenX * 2 / 3, posY: screenY * 4 / 7 }
       },
       default: {
         title: null,
@@ -66,7 +66,7 @@ export default function About({ loading }) {
     }
 
     // Declare arrays for preset variables
-    let zPosArr = [0,1,2,0,1,2,0,1,2,0,1,2,0,1,2,0,1],
+    let zPosArr = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,2,2,2,2,2],
         infoArr = [0,1,2,3,4]
         
     // Shuffle arrays for variation on load
@@ -77,21 +77,29 @@ export default function About({ loading }) {
       const info = z === 2 ? aboutMe[infoArr.shift()] : aboutMe.default
       // if(z === 2) console.log(info)
       return (
-        <AboutCard
-          key={`card_${i}`}
-          info={info}
-          i={i}
-          z={z}
-        />
+        <section
+          className={`
+            ${
+              z === 0 ? styles.plxBack :
+              z === 1 ? styles.noPlx :
+              z === 2 ? styles.plxFront : null
+            }
+          `}
+        >
+          <AboutCard
+            key={`card_${i}`}
+            info={info}
+            i={i}
+            z={z}
+          />
+        </section>
       )
     }))
   }
   
   return (
-    <div className={styles.aboutInnerWrapper}>
-      <section>
-        {cards}
-      </section>
+    <div className={styles.aboutWrapper}>
+      {cards}
     </div >
   )
 }

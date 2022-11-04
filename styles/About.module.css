@@ -1,36 +1,51 @@
-.aboutInnerWrapper {
+.aboutWrapper {
+  position: relative;
   background: var(--bg-main);
   height: max-content;
   min-height: 100vh;
-  /* max-height: max-content; */
   overflow-x: clip;
-  z-index: -1;
+  overflow-y: scroll;
+  z-index: 0;
+  perspective: 2rem;
 }
 
-.aboutInnerWrapper::-webkit-scrollbar {
+.aboutWrapper::after {
+  content: 'ABOUT ME';
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Voga', serif;
+  font-size: 4.5vw;
+  transform: translateY(25%) translateZ(-2rem) scale(400%);
+}
+
+.aboutWrapper::-webkit-scrollbar {
   display: none;
 }
 
-.aboutInnerWrapper section {
+.aboutWrapper section {
+  transform-style: preserve-3d;
   position: relative;
   width: 100%;
-  perspective: 20rem;
 }
 
 .plxBack {
-  transform: translateZ(-20rem);
-  opacity: .7;
-  z-index: -10;
+  transform: translateZ(-2rem) scale(350%);
+  opacity: .6;
+  z-index: 0;
 }
 
 .plxFront {
-  z-index: 10;
+  z-index: 20;
 }
 
 .noPlx {
-  transform: translateZ(-10rem);
+  transform: translateZ(-1rem) scale(200%);
   opacity: .8;
-  z-index: 0;
+  z-index: 10;
 }
 
 .card {
@@ -39,16 +54,14 @@
   left: calc(var(--posX) * 1px); top: calc(var(--posY) * 1px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: calc(var(--width) * 1rem);
-  height: max-content;
+  height: min-content;
   background: var(--color);
   border-radius: .75rem;
   box-shadow: 0 0 .5rem -.3rem;
   padding: 1.2rem;
   caret-color: transparent;
   transform: scale(100%);
-  transform-style: preserve-3d;
   transition: transform 120ms ease-out;
 }
 
@@ -94,6 +107,7 @@
 .card > p {
   width: 100%;
   text-align: justify;
+  margin-block: auto;
 }
 
 .info {
@@ -131,7 +145,7 @@
   .info, .card.clickMe {
     position: relative;
     left: calc(var(--posX) * 1px / 2); top: 1rem;
-    width: 12rem;
+    width: 13rem;
     margin-bottom: 2rem;
   }
 

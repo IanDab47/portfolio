@@ -3,13 +3,17 @@
   --bg-main: #010101;
   --fnt-main: #eee;
   --fnt-act-1: #57e;
-  --fnt-act-2: #8e7;
+  --fnt-act-2: #6d6;
   --fnt-act-3: #e66;
   --fnt-act-4: #dd5;
   --fnt-act-5: #d8d;
   color: #eee;
   background: var(--bg-main);
   color-scheme: dark;
+}
+
+.main {
+  perspective: 2rem;
 }
 
 .hidden {
@@ -100,7 +104,7 @@
   min-height: 100vh;
   max-height: 100vh;
   scroll-snap-type: block;
-  /* z-index: 10; */
+  z-index: -99;
   padding-bottom: 12rem;
   margin-bottom: 12rem;
 }
@@ -177,7 +181,7 @@
 .heroBg > div > p {
   font-family: Times, serif;
   font-weight: 100;
-  font-size: clamp(5.5em, 9vw, 90em);
+  font-size: clamp(6rem, 9vw, 90em);
   user-select: none;
 }
 
@@ -233,6 +237,16 @@
   transform: translateY(-80%);
   transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 80ms;
 }
+/* 
+.aboutWrapper {
+  background: var(--bg-main);
+  height: max-content;
+  min-height: 100vh;
+  transform-style: preserve-3d;
+  overflow-x: clip;
+  overflow-y: auto;
+  perspective: 2rem;
+} */
 
 /* @media (prefers-color-scheme: dark) { */
   .dark #loadingBar {
