@@ -1,12 +1,12 @@
 .aboutWrapper {
   position: relative;
   background: var(--bg-main);
-  height: 100rem;
+  height: 150rem;
   overflow-x: clip;
   overflow-y: scroll;
   z-index: 0;
   perspective: 2rem;
-  /* scroll-snap-type: mandatory; */
+  scrollbar-width: none;
 }
 
 .aboutWrapper::after {
@@ -34,8 +34,8 @@
 }
 
 .plxBack {
-  transform: translateZ(-2rem) scale(350%);
   opacity: .6;
+  transform: translateZ(-2rem) scale(350%);
   z-index: 0;
 }
 
@@ -44,8 +44,8 @@
 }
 
 .noPlx {
-  transform: translateZ(-1rem) scale(200%);
   opacity: .8;
+  transform: translateZ(-1rem) scale(200%);
   z-index: 10;
 }
 
