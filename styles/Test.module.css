@@ -1,0 +1,35 @@
+.isCurrent {
+  transition: all 3s cubic-bezier(.1,.8,.2,1);
+}
+
+#test ul {
+  padding: 0;
+}
+
+#test section {
+  position: relative;
+  min-height: 100vh;
+}
+
+#test section:first-child {
+  background: red;
+}
+#test section {
+  background: green;
+}
+#test section:last-child {
+  background: blue;
+}
+
+/* #test nav p {
+  display: inline;
+  margin-inline: 2rem;
+} */
+
+.hidden {
+  opacity: 0;
+}
+
+.reveal {
+  opacity: 1;
+}

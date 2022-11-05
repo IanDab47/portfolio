@@ -5,6 +5,9 @@ import styles from '../styles/About.module.css'
 // React
 import { useState, useEffect } from 'react'
 
+// Dependencies
+import Scrollspy from 'react-scrollspy'
+
 // Components
 import AboutCard from './aboutCard'
 
@@ -55,8 +58,8 @@ export default function About({ loading }) {
       },
       4: {
         title: `Learning has always been exciting for me`,
-        description: `From learning to play musical instruments, to building keyboards, to writing code, I'm always up for a new expeience and challenge to pursue greater `,
-        styles: { width: 14  * (16 / remConv), posX: screenX * 2 / 3, posY: screenY * 4 / 7 }
+        description: `From learning to play musical instruments, to building keyboards, to writing code. I'm always up for a new expeience and challenge to pursue greater `,
+        styles: { width: (screenX / 273 + 8.5)  * (16 / remConv), posX: screenX * 2 / 3, posY: screenY * 4 / 7 }
       },
       default: {
         title: null,

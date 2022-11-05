@@ -1,0 +1,9 @@
+.skillsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: clip;
+  border-bottom: 1px solid var(--fnt-main);
+}

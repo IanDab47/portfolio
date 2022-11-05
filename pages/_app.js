@@ -19,9 +19,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* header */}
-      <NavBar 
+      {/* <NavBar 
         isDark={isDark}
-      />
+      /> */}
       {/* aside */}
       <Component {...pageProps}
         isDark={isDark}

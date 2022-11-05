@@ -13,6 +13,8 @@ import styles from '../styles/Home.module.css'
 import Loading from '../components/loading'
 import ModeSwitch from '../components/modeSwitch'
 import About from '../components/about'
+import Skills from '../components/skills'
+import Projects from '../components/projects'
 
 export default function Home({ isDark, setIsDark }) {
   // States
@@ -25,6 +27,8 @@ export default function Home({ isDark, setIsDark }) {
   // Hooks
   useEffect(() => {
     if(screenWidth === 0) setScreenWidth(window.innerWidth)
+
+    console.log(window)
     
     function handleResize() {
       setScreenWidth(window.innerWidth)
@@ -94,13 +98,13 @@ export default function Home({ isDark, setIsDark }) {
         <About loading={loading}/>
       </div>
 
-      <div id='skills'>
-        Section about skills
-      </div>
+      <Skills 
+        loading={loading}
+      />
 
-      <div id='projects'>
-        Section about projects
-      </div>
+      <Projects 
+        loading={loading}
+      />
 
     </div>
   )
