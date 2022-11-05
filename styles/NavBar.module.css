@@ -12,6 +12,20 @@
   color-scheme: dark;
 }
 
+.waiting {
+  transform: translateY(-20%);
+  transition: transform 200ms linear;
+}
+
+.display {
+  transform: translateY(0%);
+  transition: transform 300ms cubic-bezier(.1,.8,.2,1) 300ms;
+}
+
+/* .revealNav {
+  transition: transform 300ms cubic-bezier(.1,.8,.2,1);
+} */
+
 .navWrapper {
   position: fixed;
   top: 0;
@@ -45,7 +59,7 @@
   transition: all 300ms cubic-bezier(.1,.8,.2,1);
 }
 
-.nav:is(:hover, :focus, :focus-within, :active) {
+.nav:is(:hover) {
   color: var(--bg-main);
   transform: translateZ(0);
   transition: transform 200ms cubic-bezier(.1,.8,.2,1),
@@ -62,7 +76,7 @@
 }
 
 /* DARK */
-.dark .nav:is(:hover, :focus, :focus-within, :active) {
+.dark .nav:is(:hover) {
   color: var(--fnt-main);
 }
 
@@ -71,5 +85,16 @@
     width: 90%;
     font-size: 1.2rem;
     transform: translateY(-1.5rem);
+  }
+
+  .nav:is(:focus, :focus-within, :active) {
+    color: var(--bg-main);
+    transform: translateZ(0);
+    transition: transform 200ms cubic-bezier(.1,.8,.2,1),
+                color 300ms linear;
+  }
+  
+  .dark .nav:is(:focus, :focus-within, :active) {
+    color: var(--fnt-main);
   }
 }

@@ -17,13 +17,12 @@ import Skills from '../components/skills'
 import Projects from '../components/projects'
 import Scrollspy from 'react-scrollspy'
 
-export default function Home({ isDark, setIsDark }) {
+export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }) {
   // States
   const [delay, setDelay] = useState(800)
   const [offsetY, setOffsetY] = useState(540)
   const [loading, setLoading] = useState(false)
   const [loadPage, setLoadPage] = useState(null)
-  const [loadedPages, setLoadedPages] = useState([])
   const [displayHome, setDisplayHome] = useState(null)
   const [screenWidth, setScreenWidth] = useState(0)
 
@@ -52,10 +51,6 @@ export default function Home({ isDark, setIsDark }) {
     setDisplayHome(styles.glassOff)
   }
 
-  const animatePageLoad = (e) => {
-    if(e.id && !loadedPages.includes(e.id)) setLoadedPages([...loadedPages, e.id])
-  }
-
   const addDelay = () => {
     setDelay(delay + 33)
   }
@@ -70,8 +65,8 @@ export default function Home({ isDark, setIsDark }) {
       </Head>
       
       <Scrollspy
-        items={ ['loading', 'about', 'skills', 'projects'] }
-        currentClassName={''}
+        items={ ['loading', 'home', 'about', 'skills', 'projects'] }
+        // currentClassName={''}
         onUpdate={e => animatePageLoad(e)}
         offset={offsetY}
       >
@@ -96,11 +91,11 @@ export default function Home({ isDark, setIsDark }) {
           style={{'--curr-w': screenWidth}}
         />
 
-        <div id='home-header'>
+        <div>
           <h1 className={styles.homeHeader}>ID</h1>
         </div>
 
-        <div id='table-of-contents' style={{ marginLeft: '8vw' }}>
+        <div style={{ marginLeft: '8vw' }}>
           <p>______</p>
           <div className={`TABLE OF CONTENTS`} >
             <a href='#about' value='about'>about</a>
