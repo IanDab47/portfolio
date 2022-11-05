@@ -1,5 +1,6 @@
 // Next
 import styles from '../styles/About.module.css'
+import main from '../styles/Home.module.css'
 // import Image from 'next/image'
 
 // React
@@ -102,8 +103,8 @@ export default function About({ loading }) {
   }
   
   return (
-    <div id='about-inner' className={styles.aboutWrapper}>
+    <div id='about' className={`${styles.aboutWrapper} ${loading ? null : main.hidden}`}>
       {cards}
-    </div >
+    </div>
   )
 }

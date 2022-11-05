@@ -13,7 +13,9 @@ export default function Skills({ loading, loadedPage }) {
         ${loadedPage ? main.display : null}
       `}
     >
-      Section about skills
+      <div className={styles.skillsContainer}>
+        Hiya!
+      </div>
     </section>
   )
 }

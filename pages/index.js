@@ -105,20 +105,18 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
         </div>
         
       </div>
-      
-      <div id='about' className={`${styles.aboutWrapper} ${loading ? null : styles.hidden}`}>
-        <About loading={loading}/>
-      </div>
+    
+      <About loading={loading}/>
 
-        <Skills 
-          loading={loading}
-          loadedPage={loadedPages.includes('skills')}
-        />
+      <Skills 
+        loading={loading}
+        loadedPage={loadedPages.includes('skills')}
+      />
 
-        <Projects 
-          loading={loading}
-          loadedPage={loadedPages.includes('projects')}
-        />
+      <Projects 
+        loading={loading}
+        loadedPage={loadedPages.includes('projects')}
+      />
       </Scrollspy>
 
     </div>

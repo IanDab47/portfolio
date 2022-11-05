@@ -25,6 +25,8 @@
   font-family: 'Voga';
   font-size: 16px;
   --bg-main: #f7f7f7;
+  --bg-grad-1: #eee;
+  --bg-grad-2: #ddd;
   --fnt-main: #010101;
   --fnt-act-1: #c54;
   --fnt-act-2: #cb5;
@@ -64,7 +66,7 @@ ul {
   pointer-events: none;
 }
 
-ul * {
+ul > * {
   pointer-events: auto;
 }
 
