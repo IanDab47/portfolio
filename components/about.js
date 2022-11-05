@@ -82,6 +82,7 @@ export default function About({ loading }) {
       return (
         <section 
           key={`card_${i}`}
+          id={`card_${i}`}
           className={`
             ${
               z === 0 ? styles.plxBack :
@@ -101,7 +102,7 @@ export default function About({ loading }) {
   }
   
   return (
-    <div className={styles.aboutWrapper}>
+    <div id='about-inner' className={styles.aboutWrapper}>
       {cards}
     </div >
   )

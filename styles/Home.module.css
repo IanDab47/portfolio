@@ -20,6 +20,18 @@
   display: none !important;
 }
 
+.waiting {
+  opacity: 0;
+}
+
+.display {
+  opacity: 1;
+}
+
+.revealPage {
+  transition: opacity 3s cubic-bezier(.1,.8,.2,1);
+}
+
 .center {
   display: flex;
   position: relative;

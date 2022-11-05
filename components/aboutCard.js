@@ -85,7 +85,7 @@ export default function AboutCard({ info, i, z }) {
   // if(info.styles.width > 0) console.log(z, info.styles, cardStyles.posX, cardStyles.posY)
 
   return (
-    <div 
+    <div id={`card_${i}:${z}`}
       className={`
         ${styles.card} 
         ${z === 2 ? styles.clickMe : null}

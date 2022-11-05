@@ -15,6 +15,12 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   font-family: 'Voga';
   font-size: 16px;
@@ -52,9 +58,12 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
+ul {
+  pointer-events: none;
+}
+
+ul * {
+  pointer-events: auto;
 }
 
 ::-webkit-scrollbar {

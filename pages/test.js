@@ -35,9 +35,6 @@ export default function Test(props) {
         <section className={`${styles.hidden} ${something.includes('section-3') ? styles.reveal : null}`} id="section-3">section 3</section>
       </Scrollspy>
       </nav>
-
-
-
     </div>
   )
 }

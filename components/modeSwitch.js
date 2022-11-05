@@ -3,7 +3,7 @@ export default function ModeSwitch({ isDark, setIsDark }) {
   const darkLamp = '/dark-lamp.svg'
 
   return (
-    <div style={{ 
+    <div id='mode-switch' style={{ 
       position: 'absolute', 
       top: 0, right: 0, 
       width: 'clamp(1.8rem, 4vw, 4vw)', 

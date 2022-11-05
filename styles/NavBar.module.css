@@ -62,7 +62,7 @@
 }
 
 /* DARK */
-.dark .nav:hover {
+.dark .nav:is(:hover, :focus, :focus-within, :active) {
   color: var(--fnt-main);
 }
 

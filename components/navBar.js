@@ -4,7 +4,7 @@ import styles from '../styles/NavBar.module.css'
 
 export default function NavBar({ isDark }) {
   return (
-    <nav className={`${styles.navWrapper} ${isDark ? styles.dark : null}`}>
+    <nav id='nav-bar' className={`${styles.navWrapper} ${isDark ? styles.dark : null}`}>
       <div className={`${styles.nav}`}>
         <Link href='#'>Home</Link>{' - '}
 
