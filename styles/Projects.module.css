@@ -179,6 +179,12 @@
   border-radius: .3rem;
   text-align: center;
   padding: .5em 1.5em;
+  transition: all 120ms linear;
+}
+
+.info > header > a:hover {
+  font-weight: 500;
+  transition: all 120ms linear 120ms;
 }
 
 .info > header > a::after {
@@ -198,7 +204,7 @@
 
 .info > header > a:hover::after {
   width: 100%;
-  transition: all 500ms cubic-bezier(.7,0,.75,.1);
+  transition: all 300ms cubic-bezier(.7,0,.75,.1);
 }
 
 .info > section {
