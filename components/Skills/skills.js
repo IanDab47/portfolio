@@ -71,9 +71,11 @@ export default function Skills({ isDark, loading, loadedPage }) {
             <div style={{ '--size': skills[tab].images.length }}
             >
               {isDark ? 
-                skills[tab].images.dark.map((image, i) => <img key={`dark_${i}`} src={image} title='Sorry, these are not links :/' layout='fill'/>)
+                skills[tab].images.dark.map((image, i) => 
+                  <img key={`dark_${i}`} src={image} title='Sorry, these are not links :/' layout='fill'/>)
                 :
-                skills[tab].images.light.map((image, i) => <img key={`light_${i}`} src={image} title='Sorry, these are not links :/' layout='fill'/>)
+                skills[tab].images.light.map((image, i) => 
+                  <img key={`light_${i}`} src={image} title='Sorry, these are not links :/' layout='fill'/>)
               }
             </div>
           </section>

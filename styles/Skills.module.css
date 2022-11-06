@@ -154,7 +154,6 @@
   max-width: 60%;
   font-family: 'VOGA';
   font-size: clamp(4.5rem, 7.5vw, 7.5rem);
-  /* text-align: center; */
   padding-inline: 1.8rem; 
   margin-inline: auto;
 }
@@ -191,7 +190,6 @@
   aspect-ratio: 1;
   position: relative;
   height: 100%;
-  background: transparent;
   border-radius: 1.2rem;
   object-fit: contain;
   padding: .5rem;
@@ -199,7 +197,6 @@
 }
 
 .info img:hover {
-  background: rgb(60 60 60 / .08);
   padding: 0.2rem;
   transition: all 200ms cubic-bezier(.1,.8,.2,1);
 }

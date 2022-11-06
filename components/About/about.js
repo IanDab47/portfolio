@@ -6,13 +6,10 @@ import main from '../../styles/Home.module.css'
 // React
 import { useState, useEffect } from 'react'
 
-// Dependencies
-import Scrollspy from 'react-scrollspy'
-
 // Components
 import AboutCard from './aboutCard'
 
-export default function About({ loading }) {
+export default function About({ isDark, loading }) {
   // States
   const [cards, setCards] = useState([])
 
@@ -103,7 +100,7 @@ export default function About({ loading }) {
   }
   
   return (
-    <div id='about' className={`${styles.aboutWrapper} ${loading ? null : main.hidden}`}>
+    <div id='about' className={`${styles.aboutWrapper} ${isDark ? styles.dark : null} ${loading ? null : main.hidden}`}>
       {cards}
     </div>
   )

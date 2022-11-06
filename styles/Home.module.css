@@ -161,6 +161,12 @@
   left: 0; top: 0;
   height: 100%;
   padding-right: 1rem;
+  transition: transform 80ms linear;
+}
+
+.contact img:hover {
+  transform: scale(112%);
+  transition: transform 200ms cubic-bezier(.1,.8,.2,1);
 }
 
 .homeHeader {

@@ -1,3 +1,21 @@
+.dark {
+  font-family: 'Lato';
+  --bg-main: #010101;
+  --bg-grad-1: #080808;
+  --bg-grad-2: #111;
+  --fnt-main: #eee;
+  --fnt-act-1: #57e;
+  --fnt-act-2: #6c5;
+  --fnt-act-3: #e66;
+  --fnt-act-4: #d7d755;
+  --fnt-act-5: #d8d;
+  --bdr-1: #191919;
+  --bdr-2: #242424;
+  color: #eee;
+  background: var(--bg-main);
+  color-scheme: dark;
+}
+
 .aboutWrapper {
   position: relative;
   background: var(--bg-main);
@@ -95,7 +113,6 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  text-shadow: 0 0 .25rem #00000040;
   transition: opacity 300ms linear;
 }
 
@@ -139,9 +156,8 @@
 }
 
 /* DARK MODE */
-.dark {
-  background: var(--fnt-main);
-  color: var(--bg-main);
+.dark .clickMe::after {
+  text-shadow: 0 0 .25rem #00000060;
 }
 
 /* PHONES */

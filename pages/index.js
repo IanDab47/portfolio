@@ -130,7 +130,7 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
         
       </div>
     
-      <About loading={loading}/>
+      <About isDark={isDark} loading={loading}/>
 
       <Skills 
         isDark={isDark}
