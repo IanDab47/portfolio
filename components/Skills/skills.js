@@ -3,7 +3,7 @@ import main from '../../styles/Home.module.css'
 import styles from '../../styles/Skills.module.css'
 
 // React
-import { useRef, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 // Components
 import Tab from './tab'
@@ -70,9 +70,9 @@ export default function Skills({ isDark, loading, loadedPage }) {
             <div style={{ '--size': skills[tab].images.length }}
             >
               {isDark ? 
-                skills[tab].images.dark.map(image => <img src={image} title='Sorry, these are not links :/' layout='fill'/>)
+                skills[tab].images.dark.map((image, i) => <img key={`dark_${i}`} src={image} title='Sorry, these are not links :/' layout='fill'/>)
                 :
-                skills[tab].images.light.map(image => <img src={image} title='Sorry, these are not links :/' layout='fill'/>)
+                skills[tab].images.light.map((image, i) => <img key={`light_${i}`} src={image} title='Sorry, these are not links :/' layout='fill'/>)
               }
             </div>
           </section>

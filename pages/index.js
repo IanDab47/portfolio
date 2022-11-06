@@ -99,7 +99,7 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
 
         <div className={`TABLE OF CONTENTS`} style={{ position: 'relative', marginLeft: '8vw' }}>
           <section className={styles.contact}>
-            <a href='https://github.com/IanDab47' target='_blank'>
+            <a href='https://github.com/IanDab47' ref={'noreferrer'} target='_blank'>
               <img 
                 src={`/Logos/GitHub/${lightSelector}.svg`}
                 alt='github-logo'
@@ -108,7 +108,7 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
               />
             </a>
 
-            <a href='https://www.linkedin.com/in/ian-dabinett/' target='_blank'>
+            <a href='https://www.linkedin.com/in/ian-dabinett/' ref={'noreferrer'} target='_blank'>
               <img 
                 src={`/Logos/LinkedIn/${lightSelector}.svg`}
                 alt='LinkedIn-logo'
