@@ -16,6 +16,8 @@ export default function Skills({ isDark, loading, loadedPage }) {
   const [tabKeys, setTabKeys] = useState(Object.keys(skills))
   const [colorSelect, setColorSelect] = useState(0)
 
+  console.log(skills[tab].images.length)
+
   useEffect(() => {
     // use index of tab to select color of tab bg
     setColorSelect(tabKeys.indexOf(tab) % 5)
@@ -65,7 +67,14 @@ export default function Skills({ isDark, loading, loadedPage }) {
           <section>
             <p>{skills[tab].text}</p>
 
-            {skills[tab].images.map(image => <img href={image}/>)}
+            <div style={{ '--size': skills[tab].images.length }}
+            >
+              {isDark ? 
+                skills[tab].images.dark.map(image => <img src={image} title='Sorry, these are not links :/' layout='fill'/>)
+                :
+                skills[tab].images.light.map(image => <img src={image} title='Sorry, these are not links :/' layout='fill'/>)
+              }
+            </div>
           </section>
         </div>
 

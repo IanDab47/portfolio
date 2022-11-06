@@ -160,11 +160,48 @@
 }
 
 .info > section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   text-align: center;
   border-left: 1px solid var(--bdr-2);
-  padding-inline: auto;
+}
+
+.info > section p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: left;
+  line-height: 3rem;
+  padding-top: 5rem;
+  margin-left: 2.4rem;
+}
+
+.info > section > div {
+  grid-template-columns: repeat(var(--size), 1fr);
+  justify-self: center;
+  gap: 1rem;
+  width: 100%;
+  height: clamp(3.6rem, 7vw, 7rem);
+  margin-inline: auto;
+}
+
+.info img {
+  aspect-ratio: 1;
+  position: relative;
+  height: 100%;
+  background: transparent;
+  border-radius: 1.2rem;
+  object-fit: contain;
+  padding: .5rem;
+  transition: all 120ms linear;
+}
+
+.info img:hover {
+  background: rgb(60 60 60 / .08);
+  padding: 0.2rem;
+  transition: all 200ms cubic-bezier(.1,.8,.2,1);
 }
 
 /* DARK */
