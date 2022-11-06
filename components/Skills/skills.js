@@ -32,6 +32,7 @@ export default function Skills({ isDark, loading, loadedPage }) {
   const tabDisplay = tabKeys.map((filter, i) => {
     return (
       <Tab 
+        key={`tab_${i}`}
         i={i}
         filter={filter}
         color={color}
