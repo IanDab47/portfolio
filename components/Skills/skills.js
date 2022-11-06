@@ -1,15 +1,23 @@
 // Next
-import main from '../styles/Home.module.css'
-import styles from '../styles/Skills.module.css'
+import main from '../../styles/Home.module.css'
+import styles from '../../styles/Skills.module.css'
 
 // React
-import { useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
-import { skills } from '../utils/skills'
+import { skills } from '../../utils/skills'
 
 export default function Skills({ isDark, loading, loadedPage }) {
   // State
   const [tab, setTab] = useState('languages')
+  const [colorSelect, setColorSelect] = useState(0)
+
+  useEffect(() => {
+    // generate array of tab names
+    const tabArr = Object.keys(skills)
+    // use index of tab to select color of tab bg
+    setColorSelect(tabArr.indexOf(tab))
+  }, [tab])
 
   return (
     <section id='skills' 
@@ -53,7 +61,7 @@ export default function Skills({ isDark, loading, loadedPage }) {
           </div>
 
           <div 
-            id='version-control'
+            id='version control'
             className={`${styles.tab} ${tab === 'version-control' ? styles.active : null}`} 
             onClick={e => setTab('version-control')}
           >

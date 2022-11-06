@@ -1,6 +1,6 @@
 // Next
-import main from '../styles/Home.module.css'
-import styles from '../styles/Projects.module.css'
+import main from '../../styles/Home.module.css'
+import styles from '../../styles/Projects.module.css'
 
 export default function Projects({ isDark, loading, loadedPage }) {
   return (

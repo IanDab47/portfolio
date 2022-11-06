@@ -1,6 +1,6 @@
 // Next
-import styles from '../styles/About.module.css'
-import main from '../styles/Home.module.css'
+import styles from '../../styles/About.module.css'
+import main from '../../styles/Home.module.css'
 // import Image from 'next/image'
 
 // React
@@ -40,7 +40,7 @@ export default function About({ loading }) {
       0: {
         title: `Hi, I'm Ian`,
         description: `I'm a software engineer who loves to pursue unique design and new technologies.`,
-        styles: { width: (screenX / 214 + 6) * (16 / remConv), posX: (screenX / 2) - (10 * remConv / 2), posY: (screenY / 2) - (16 * remConv / 2) }
+        styles: { width: (screenX / 214 + 6) * (16 / remConv), posX: (screenX / 2) - (10 * remConv / 2), posY: (screenY) - (16 * remConv / 2) }
       },
       1: {
         title: `I've been programming for over 10 years now!`,
@@ -50,7 +50,7 @@ export default function About({ loading }) {
       2: {
         title: `Being a former video and audio producer has helped me a lot!`,
         description: `Learning new programs and adapting to new environments are my strongest qualities because of it!`,
-        styles: { width: (screenX / 294 + 9) * (16 / remConv), posX: screenX * 3 / 4, posY: screenY / 12 }
+        styles: { width: (screenX / 294 + 9) * (16 / remConv), posX: screenX * 3 / 4, posY: screenY - screenY / 100 }
       },
       3: {
         title: `My hobbies keep me motivated!`,
@@ -59,8 +59,8 @@ export default function About({ loading }) {
       },
       4: {
         title: `Learning has always been exciting for me`,
-        description: `From learning to play musical instruments, to building keyboards, to writing code. I'm always up for a new expeience and challenge to pursue greater `,
-        styles: { width: (screenX / 273 + 8.5)  * (16 / remConv), posX: screenX * 2 / 3, posY: screenY * 4 / 7 }
+        description: `From learning to play musical instruments, to building keyboards, to using code to solve logical problems. I'm always up for a new expeience and challenge to pursue greater`,
+        styles: { width: (screenX / 273 + 8.5)  * (16 / remConv), posX: screenX * 2 / 3, posY: screenY * 2 / 7 }
       },
       default: {
         title: null,

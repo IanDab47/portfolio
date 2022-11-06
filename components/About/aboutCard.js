@@ -1,5 +1,5 @@
 // Next
-import styles from '../styles/About.module.css'
+import styles from '../../styles/About.module.css'
 
 // React
 import { useState } from 'react'

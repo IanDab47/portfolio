@@ -1,21 +1,21 @@
 export const skills = {
   languages: {
-    title: `JavaScript and TypeScript`,
+    title: `JavaScript, TypeScript, and Python`,
     text: ``,
     images: [``]
   },
   frameworks: {
-    title: ``,
+    title: `Next.js, React, Express, and Django`,
     text: ``,
     images: [``]
   },
   databases: {
-    title: ``,
+    title: `MongoDB and PostgreSQL`,
     text: ``,
     images: [``]
   },
   'version-control': {
-    title: ``,
+    title: `GitHub`,
     text: ``,
     images: [``]
   },

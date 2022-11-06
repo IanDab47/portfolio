@@ -12,9 +12,9 @@ import styles from '../styles/Home.module.css'
 // Components
 import Loading from '../components/loading'
 import ModeSwitch from '../components/modeSwitch'
-import About from '../components/about'
-import Skills from '../components/skills'
-import Projects from '../components/projects'
+import About from '../components/About/about'
+import Skills from '../components/Skills/skills'
+import Projects from '../components/Projects/projects'
 import Scrollspy from 'react-scrollspy'
 
 export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }) {
