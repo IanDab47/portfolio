@@ -80,7 +80,7 @@ export default function Projects({ isDark, loading, loadedPage }) {
               className={styles.button}
               style={{ '--color': projects[tab].color }}
             >
-              Go To Site
+              Check It Out!
             </a>
           </header>
 
