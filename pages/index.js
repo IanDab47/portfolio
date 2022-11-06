@@ -94,7 +94,9 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
         />
 
         <div>
-          <h1 className={styles.homeHeader}>ID</h1>
+          <a href='https://drive.google.com/file/d/1UjB5UMILitRU5kqluCf3nuNkqlyawudI/view' rel='noreferrer' target='_blank'>
+            <h1 className={styles.homeHeader}>ID</h1>
+          </a>
         </div>
 
         <div className={`TABLE OF CONTENTS`} style={{ position: 'relative', marginLeft: '8vw' }}>
