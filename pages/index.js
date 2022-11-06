@@ -56,6 +56,8 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
   }
 
   // Output
+  const lightSelector = isDark ? 'dark' : 'light'
+
   return (
     <div className={`${styles.main} ${displayHome} ${styles.scrollSnap} ${isDark ? styles.dark : null}`}>
       <Head>
@@ -95,9 +97,31 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
           <h1 className={styles.homeHeader}>ID</h1>
         </div>
 
-        <div style={{ marginLeft: '8vw' }}>
+        <div className={`TABLE OF CONTENTS`} style={{ position: 'relative', marginLeft: '8vw' }}>
+          <section className={styles.contact}>
+            <a href='https://github.com/IanDab47' target='_blank'>
+              <img 
+                src={`/Logos/GitHub/${lightSelector}.svg`}
+                alt='github-logo'
+                title='Check out my GitHub!'
+                layout='fill'
+              />
+            </a>
+
+            <a href='https://www.linkedin.com/in/ian-dabinett/' target='_blank'>
+              <img 
+                src={`/Logos/LinkedIn/${lightSelector}.svg`}
+                alt='LinkedIn-logo'
+                title='Check out my LinkedIn!'
+                layout='fill'
+              />
+            </a>
+
+            {/* CONTACT ME BUTTON HERE */}
+
+          </section>
           <p>______</p>
-          <div className={`TABLE OF CONTENTS`} >
+          <div>
             <a href='#about' value='about'>about</a>
             <a href='#skills' value='skills'>skills</a>
             <a href='#projects' value='projects'>projects</a>

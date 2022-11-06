@@ -149,6 +149,20 @@
   z-index: 1;
 }
 
+.contact {
+  position: absolute;
+  left: 0; top: 3.5rem;
+  width: 100%; height: 6vw;
+}
+
+.contact img {
+  aspect-ratio: 1;
+  position: relative;
+  left: 0; top: 0;
+  height: 100%;
+  padding-right: 1rem;
+}
+
 .homeHeader {
   position: relative;
   background: var(--fnt-act-1);
@@ -197,7 +211,7 @@
   user-select: none;
 }
 
-.heroBg > div a {
+.heroBg > div > div a {
   display: block;
   position: relative;
   width: min-content;
@@ -209,13 +223,13 @@
   user-select: none;
 }
 
-.heroBg > div a:is(:hover, :focus, :active) {
+.heroBg > div > div a:is(:hover, :focus, :active) {
   font-size: clamp(4.0rem, 9vw, 90rem);
   color: var(--fnt-act-2);
   z-index: 1;
 }
 
-.heroBg > div a::before {
+.heroBg > div > div a::before {
   content: attr(value);
   display: block;
   position: relative;
@@ -226,13 +240,13 @@
   transition: transform 80ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
-.heroBg > div a:is(:hover, :focus, :active)::before {
+.heroBg > div > div a:is(:hover, :focus, :active)::before {
   color: var(--fnt-act-1);
   transform: translateY(275%);
   transition: transform 80ms cubic-bezier(.1,.8,.2,1) 40ms;
 }
 
-.heroBg > div a::after {
+.heroBg > div > div a::after {
   content: attr(value);
   display: block;
   position: relative;
@@ -243,16 +257,16 @@
   transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 0ms;
 }
 
-.heroBg > div a:is(:hover, :focus, :active)::after {
+.heroBg > div > div a:is(:hover, :focus, :active)::after {
   color: var(--fnt-act-3);
   margin-top: 1em;
   transform: translateY(-80%);
   transition: margin-top 80ms cubic-bezier(.1,.8,.2,1) 80ms;
 }
 
-.heroBg > div a,
-.heroBg > div a::after,
-.heroBg > div a::before {
+.heroBg > div > div a,
+.heroBg > div > div a::after,
+.heroBg > div > div a::before {
   outline: none;
 }
 
@@ -307,8 +321,13 @@
     min-height: 50vh;
     object-position: right;
   }
+
+  .contact {
+    top: 2.5rem;
+    width: 100%; height: 4.3rem;
+  }
   
-  .heroBg > div a {
+  .heroBg > div > div a {
     font-size: clamp(3.5rem, 6vw, 90rem); 
   }
 

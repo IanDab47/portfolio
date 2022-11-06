@@ -5,19 +5,39 @@ import styles from '../../styles/Skills.module.css'
 // React
 import { useRef, useState, useEffect } from 'react'
 
+// Components
+import Tab from './tab'
+
 import { skills } from '../../utils/skills'
 
 export default function Skills({ isDark, loading, loadedPage }) {
   // State
   const [tab, setTab] = useState('languages')
+  const [tabKeys, setTabKeys] = useState(Object.keys(skills))
   const [colorSelect, setColorSelect] = useState(0)
 
   useEffect(() => {
-    // generate array of tab names
-    const tabArr = Object.keys(skills)
     // use index of tab to select color of tab bg
-    setColorSelect(tabArr.indexOf(tab))
+    setColorSelect(tabKeys.indexOf(tab) % 5)
   }, [tab])
+
+  const color = colorSelect === 0 ? styles.colorOne :
+                colorSelect === 1 ? styles.colorTwo :
+                colorSelect === 2 ? styles.colorThree :
+                colorSelect === 3 ? styles.colorFour :
+                colorSelect === 4 ? styles.colorFive : null
+
+  const tabDisplay = tabKeys.map((filter, i) => {
+    return (
+      <Tab 
+        i={i}
+        filter={filter}
+        color={color}
+        tab={tab}
+        setTab={setTab}
+      />
+    )
+  })
 
   return (
     <section id='skills' 
@@ -35,40 +55,7 @@ export default function Skills({ isDark, loading, loadedPage }) {
           ${loadedPage ? main.display : null}
         `}
       >
-        <nav className={styles.tabBar}>
-          <div 
-            id='languages'
-            className={`${styles.tab} ${tab === 'languages' ? styles.active : null}`} 
-            onClick={e => setTab('languages')}
-          >
-            Languages
-          </div>
-
-          <div 
-            id='frameworks'
-            className={`${styles.tab} ${tab === 'frameworks' ? styles.active : null}`} 
-            onClick={e => setTab('frameworks')}
-          >
-            Frameworks
-          </div>
-
-          <div 
-            id='databases'
-            className={`${styles.tab} ${tab === 'databases' ? styles.active : null}`} 
-            onClick={e => setTab('databases')}
-          >
-            Databases
-          </div>
-
-          <div 
-            id='version control'
-            className={`${styles.tab} ${tab === 'version-control' ? styles.active : null}`} 
-            onClick={e => setTab('version-control')}
-          >
-            Version Control
-          </div>
-
-        </nav>
+        <nav className={styles.tabBar}>{tabDisplay}</nav>
 
         <div className={styles.info}>
           <header>
@@ -76,7 +63,7 @@ export default function Skills({ isDark, loading, loadedPage }) {
           </header>
 
           <section>
-            <p>This is where the text for all the details will go.</p>
+            <p>{skills[tab].text}</p>
 
             {skills[tab].images.map(image => <img href={image}/>)}
           </section>
