@@ -1,16 +1,16 @@
 .dark {
   font-family: 'Lato';
   --bg-main: #010101;
-  --bg-grad-1: #111;
-  --bg-grad-2: #181818;
+  --bg-grad-1: #080808;
+  --bg-grad-2: #111;
   --fnt-main: #eee;
   --fnt-act-1: #57e;
   --fnt-act-2: #6c5;
   --fnt-act-3: #e66;
   --fnt-act-4: #d7d755;
   --fnt-act-5: #d8d;
-  --bdr-1: #333;
-  --bdr-2: #444;
+  --bdr-1: #191919;
+  --bdr-2: #242424;
   color: #eee;
   background: var(--bg-main);
   color-scheme: dark;

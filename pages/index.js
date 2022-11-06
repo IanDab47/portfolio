@@ -109,11 +109,13 @@ export default function Home({ isDark, setIsDark, loadedPages, animatePageLoad }
       <About loading={loading}/>
 
       <Skills 
+        isDark={isDark}
         loading={loading}
         loadedPage={loadedPages.includes('skills')}
       />
 
       <Projects 
+        isDark={isDark}
         loading={loading}
         loadedPage={loadedPages.includes('projects')}
       />
