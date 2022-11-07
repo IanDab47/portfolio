@@ -16,7 +16,7 @@ export default function Skills({ isDark, loading, loadedPage }) {
   const [tabKeys, setTabKeys] = useState(Object.keys(skills))
   const [colorSelect, setColorSelect] = useState(0)
 
-  console.log(skills[tab].images.length)
+  // console.log(skills[tab].images.length)
 
   useEffect(() => {
     // use index of tab to select color of tab bg

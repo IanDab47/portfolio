@@ -32,7 +32,7 @@
   /* display: flex;
   flex-direction: column;
   justify-content: center; */
-  width: clamp(10rem, 90vw, 80rem);
+  width: clamp(10rem, 95vw, 80rem);
   height: clamp(1rem, 90vh, 55rem);
   background: radial-gradient(
     circle,
@@ -222,6 +222,103 @@
 
 .dark .info {
   border: 1px solid var(--bdr-2);
+}
+
+/* MOBILE */
+@media (max-width: 784px) {
+  .skillsWrapper {
+    display: flex;
+    justify-content: center;
+    /* padding-top: 3.5rem; */
+  }
+
+  .tabBar {
+    width: min-content;
+    margin-left: .25rem;
+    margin-top: 1.2rem;
+  }
+
+  .tab {
+    writing-mode: vertical-lr;
+    position: relative;
+    background-position: top;
+    background-size: 100% 0%;
+    border-bottom: 1px solid var(--bdr-2);
+    border-left: none;
+    border-radius: 0 .5rem .5rem 0;
+    padding: 1.6rem .6rem;
+    transform: rotate(180deg);
+  }
+  
+  .tab:hover {
+    background-size: 100% 100%;
+    transition: all 500ms cubic-bezier(.7,0,.75,.1);
+  }
+
+  .tab::before {
+    width: 100%; height: 0%;
+    border-radius: 0 .5rem .5rem 0;
+    opacity: 0;
+    transition: height 300ms ease-in;
+  }
+
+  .active::before {
+    background: var(--color);
+  }
+
+  .active::before {
+    height: 100%;
+    opacity: 1;
+    transition: height 500ms cubic-bezier(.7,0,.75,.1);
+  }
+
+  .tab::after {
+    padding: 0 0 0 .6rem;
+  }
+
+  .info {
+    flex-direction: column;
+    padding: 1.2rem 0;
+    box-shadow: 0 .2rem 0.5rem -0.4rem;
+  }
+  
+  .info > header {
+    font-size: clamp(3rem, 7.5vh, 7.5rem);
+    text-align: center;
+    padding-inline: 0; 
+    padding-bottom: 3vh;
+    border-bottom: 1px solid var(--bdr-2);
+  }
+  
+  .info > section {
+    border-left: 0;
+  }
+  
+  .info > section p {
+    font-size: clamp(1.2rem, 2.5vh, 2rem);
+    line-height: initial;
+    padding-top: 5vh;
+    padding-right: 1.2rem;
+  }
+  
+  .info > section > div {
+    height: clamp(3.0rem, 6vh, 7rem);
+  }
+  
+  .info img {
+    border-radius: .6rem;
+    padding: .25rem;
+  }
+  
+  /* DARK MOBILE */
+  .dark .active::before {
+    background: linear-gradient(
+      45deg,
+      #dd7799,
+      #8822bb,
+      #3355aa
+    );
+  }
 }
 
 /* COLORS */

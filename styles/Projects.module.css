@@ -24,7 +24,6 @@
   min-height: 100vh;
   overflow: clip;
   border-bottom: 1px solid var(--bdr-2);
-  box-shadow: 0 0 6rem 6rem var(--bg-main);
 }
 
 .projectsWrapper {
