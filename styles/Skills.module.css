@@ -310,6 +310,10 @@
     padding: .25rem;
   }
   
+  .info img:hover {
+    padding: 0.12rem;
+  }
+  
   /* DARK MOBILE */
   .dark .active::before {
     background: linear-gradient(

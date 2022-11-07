@@ -27,8 +27,8 @@
 }
 
 .projectsWrapper {
-  width: clamp(10rem, 90vw, 80rem);
-  height: clamp(1rem, 90vh, 55rem);
+  width: clamp(10rem, 95vw, 80rem);
+  height: clamp(1rem, 98vh, 55rem);
   background: radial-gradient(
     circle,
     var(--bg-grad-1) 25%,
@@ -272,6 +272,144 @@
 
 .dark .info {
   border: 1px solid var(--bdr-2);
+}
+
+/* MOBILE */
+@media (max-width: 784px) {
+  .projectsWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .tabBar {
+    width: min-content;
+    margin-left: .25rem;
+    margin-top: 1.2rem;
+  }
+
+  .tab {
+    writing-mode: vertical-lr;
+    position: relative;
+    background-position: top;
+    background-size: 100% 0%;
+    border-bottom: 1px solid var(--bdr-2);
+    border-left: none;
+    border-radius: 0 .5rem .5rem 0;
+    padding: 1.6rem .6rem;
+    transform: rotate(180deg);
+  }
+  
+  .tab:hover {
+    background-size: 100% 100%;
+    transition: all 500ms cubic-bezier(.7,0,.75,.1);
+  }
+
+  .tab::before {
+    width: 100%; height: 0%;
+    border-radius: 0 .5rem .5rem 0;
+    opacity: 0;
+    transition: height 300ms ease-in;
+  }
+
+  .active::before {
+    background: var(--color);
+  }
+
+  .active::before {
+    height: 100%;
+    opacity: 1;
+    transition: height 500ms cubic-bezier(.7,0,.75,.1);
+  }
+
+  .tab::after {
+    padding: 0 0 0 .6rem;
+  }
+
+  .info {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding: 0rem 0;
+    box-shadow: 0 .2rem 0.5rem -0.4rem;
+  }
+  
+  .info > header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: .6rem; 
+    padding-bottom: 1.2rem;
+    text-align: right;
+  }
+  
+  .info > header > p:first-child {
+    font-size: clamp(3.3rem, 7vh, 7rem);
+    text-align: center;
+    padding-top: 4vh;
+  }
+  
+  .info > header > p:nth-child(2) {
+    line-height: 3.6vh;
+    text-align: left;
+  }
+  
+  .info > header > a {
+    position: relative;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    background: var(--color);
+    color: #eee;
+    border-radius: .3rem;
+    text-align: center;
+    padding: .5em 1.5em;
+    transition: all 120ms linear;
+  }
+  
+  .info > header > a:is(:active, :focus, :focus-within) {
+    font-weight: 500;
+    transition: all 120ms linear 120ms;
+  }
+    
+  .info > header > a:hover::after {
+    width: 100%;
+    transition: all 300ms cubic-bezier(.7,0,.75,.1);
+  }
+  
+  .info > section {
+    height: 60%;
+    text-align: center;
+    border-right: none;
+  }
+  
+  .info section > img {
+    padding-right: initial;
+    padding: .5rem;
+  }
+
+  .info section > div {
+    height: clamp(2.5rem, 6vw, 5.6rem);
+  }
+  
+  .info div > img {
+    border-radius: .6rem;
+    padding: .25rem;
+  }
+  
+  .info div > img:hover {
+    padding: 0.12rem;
+    transition: all 200ms cubic-bezier(.1,.8,.2,1);
+  }
+  
+  /* DARK MOBILE */
+  .dark .active::before {
+    background: linear-gradient(
+      45deg,
+      #ffaa99,
+      #ddcc33 40%,
+      #44dd77 90%
+    );
+  }
 }
 
 /* COLORS */
